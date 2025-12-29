@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>ToDo List</title>
+      <link rel="stylesheet" href="./css/style.css" />
+   </head>
+   <body>
+      <div class="container">
+         <div class="todo-wrapper">
+            <header class="todo-header">
+               <div class="title-controls">
+                  <h1 class="todo-title">ToDo List</h1>
+                  <button class="title-change-btn" aria-label="제목 변경">
+                     ✏️
+                  </button>
+               </div>
+               <div class="theme-switch-wrapper">
+                  <label class="theme-switch" for="theme-toggle">
+                     <input type="checkbox" id="theme-toggle" />
+                     <div class="slider round"></div>
+                  </label>
+               </div>
+            </header>
+
+            <div class="progress-wrapper">
+               <div class="progress-bar"><div class="progress-fill"></div></div>
+               <span class="progress-text">0%</span>
+            </div>
+
+            <div class="filter-controls">
+               <button class="filter-btn active" data-filter="all">
+                  모든 작업
+               </button>
+               <button class="filter-btn" data-filter="active">진행중</button>
+               <button class="filter-btn" data-filter="completed">
+                  완료됨
+               </button>
+            </div>
+
+            <div class="todo-content">
+               <ul class="todo-list"></ul>
+            </div>
+
+            <footer class="todo-footer">
+               <div class="todo-input-wrapper">
+                  <input
+                     type="text"
+                     class="todo-input"
+                     placeholder="새로운 할 일 추가..."
+                  />
+                  <button class="add-btn" aria-label="할 일 추가">+</button>
+               </div>
+               <div class="sub-controls">
+                  <button class="delete-all-btn">전체 삭제</button>
+               </div>
+            </footer>
+         </div>
+      </div>
+      <script src="./js/main.js"></script>
+   </body>
+</html>

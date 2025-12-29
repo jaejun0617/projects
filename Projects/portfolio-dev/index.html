@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>신재준 | Interactive Front-End Portfolio</title>
+      <link
+         rel="icon"
+         href="./assets/icons/emoji-profile.png"
+         type="image/png"
+      />
+
+      <link rel="stylesheet" href="./css/common.css" />
+      <link rel="stylesheet" href="./css/layout.css" />
+      <link rel="stylesheet" href="./css/components.css" />
+   </head>
+   <body style="overflow-x: hidden">
+      <!-- 상단 진행률 바 -->
+      <div class="progress-bar-container">
+         <div class="progress-bar"></div>
+      </div>
+      <!-- [헤더] -->
+      <header>
+         <div class="header-inner">
+            <div class="logo">
+               <a href="index.html" class="logo-img-link">
+                  <img src="./assets/icons/emoji-profile.png" alt="profile" />
+               </a>
+
+               <!-- 네비게이션 링크들을 감싸는 컨테이너 -->
+               <nav class="header-nav-links">
+                  <div class="nav-link-item">
+                     <a
+                        href="https://github.com/jaejun0617"
+                        target="_blank"
+                        data-tooltip="GitHub 보러가기"
+                        >GitHub</a
+                     >
+                  </div>
+                  <div class="nav-link-item">
+                     <a
+                        href="https://www.notion.so/5-2684a8f4e2ee801f80cbd07f4d59c3c9"
+                        target="_blank"
+                        data-tooltip="Notion 보러가기"
+                        >Notion</a
+                     >
+                  </div>
+               </nav>
+            </div>
+
+            <div class="header-utils">
+               <button id="admin-auth-btn">
+                  <span id="auth-btn-text">관리자</span>
+               </button>
+               <button class="mobile-menu-btn">
+                  <span class="line"></span>
+                  <span class="line"></span>
+                  <span class="line"></span>
+               </button>
+            </div>
+         </div>
+      </header>
+      <!-- 메인 콘텐츠 -->
+      <div class="wrapper">
+         <main>
+            <!-- [섹션 1] Hero -->
+            <section id="hero" data-color="#e74c3c">
+               <div class="hero-background"></div>
+
+               <div class="hero-content">
+                  <!-- 텍스트 콘텐츠 -->
+                  <div class="hero-text-content">
+                     <h1 class="line1">Front-End</h1>
+                     <h2 class="line2">
+                        사용자 중심의
+                        <strong class="highlight">웹 경험</strong>을 설계하는
+                        <strong class="highlight">신재준</strong>
+                     </h2>
+                     <h3 class="line3">
+                        문제를 분석하고
+                        <strong class="highlight">해결하는</strong> 힘,
+                     </h3>
+                     <h4 class="line4">
+                        끈기와 <strong class="highlight">책임감</strong>으로
+                        끝까지 밀고 나가는
+                        <strong class="highlight">개발자</strong>
+                     </h4>
+                  </div>
+
+                  <!-- 프로필 이미지 -->
+                  <div class="hero-profile-image">
+                     <img
+                        src="./assets/icons/emoji-profile.png"
+                        alt="신재준 프로필 사진"
+                     />
+                  </div>
+               </div>
+            </section>
+
+            <!-- [섹션 2] About & Skills -->
+            <section id="about" data-color="#3498db">
+               <div class="section-title" data-animation="fade-in-up">
+                  <h2>CONNECTING THE DOTS</h2>
+                  <p>
+                     흩어진 점들을 연결하여 가치를 만듭니다.<br />
+                     아이디어를 현실로, 기술을 경험으로, <br />
+                     어제의 배움을 오늘의 성장으로 잇습니다.
+                  </p>
+               </div>
+
+               <div class="about-profile-content">
+                  <div
+                     class="profile-image"
+                     data-animation="fade-in-left"
+                     style="transition-delay: 0.2s"
+                  >
+                     <div class="about-profile">
+                        <img
+                           src="./assets/images/main/about/profile.jpeg"
+                           alt=""
+                        />
+                     </div>
+                     <div class="about-info">
+                        <div class="about-title-group">
+                           <div class="name-block">
+                              <h4>신재준</h4>
+                              <p class="eng-name">Shin Jae Jun</p>
+                              <p>1996 - 06 - 17</p>
+                              <p>+82 10 - 9968 - 1342</p>
+                              <p>o3o_security@naver.com</p>
+                           </div>
+
+                           <div class="philosophy-block">
+                              <h3 class="slogan">
+                                 Building Interactive Web Experiences
+                              </h3>
+                              <p class="description">
+                                 "단순한 코딩을 넘어, 사용자가 즐길 수 있는 웹을
+                                 만듭니다."
+                              </p>
+                           </div>
+                        </div>
+                        <div class="about-slider">
+                           <p class="quote-text"></p>
+                           <div class="quote-author-info">
+                              <span class="quote-author"></span>
+                              <span class="quote-source"></span>
+                           </div>
+                        </div>
+                        <div class="about-links-wrapper">
+                           <div class="about-resume">
+                              <a href="#" class="resume-btn" target="_blank">
+                                 RESUME
+                              </a>
+                           </div>
+
+                           <div class="about-social">
+                              <a
+                                 href="https://github.com/jaejun0617"
+                                 target="_blank"
+                                 title="GitHub"
+                              >
+                                 <img
+                                    src="./assets/icons/social/git-e2d1c2.png"
+                                    alt="git"
+                                 />
+                              </a>
+                              <a
+                                 href="https://www.notion.so/5-2684a8f4e2ee801f80cbd07f4d59c3c9"
+                                 target="_blank"
+                                 title="Notion"
+                              >
+                                 <img
+                                    src="./assets/icons/social/notion-e2d1c2.png"
+                                    alt="notion"
+                                 />
+                              </a>
+                              <a
+                                 href="https://open.kakao.com/o/sC80Idtg"
+                                 target="_blank"
+                                 title="KakaoTalk"
+                              >
+                                 <img
+                                    src="./assets/icons/social/talk-e2d1c2.png"
+                                    alt="talk"
+                                 />
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div
+                     class="about-journey"
+                     data-animation="fade-in-right"
+                     style="transition-delay: 0.3s"
+                  >
+                     <div class="journey-item">
+                        <div class="journey-phase">
+                           <span class="dot red"></span>
+                           <p>Phase 1: The Spark (호기심의 시작)</p>
+                        </div>
+                        <h4>
+                           아이디어를 <strong>현실로 구현하는</strong> 즐거움
+                        </h4>
+                        <p>
+                           '이건 어떻게 만들었을까?'라는 순수한 호기심으로
+                           열어본 개발자 도구가 모든 것의 시작이었습니다. 눈에
+                           보이는 디자인이
+                           <strong>논리적인 코드로 구현</strong>되는 과정을
+                           통해, 추상적인 아이디어를 손에 잡히는 결과물로
+                           만들어내는 프론트엔드 개발의 매력에 빠져들었습니다.
+                        </p>
+                     </div>
+
+                     <div class="journey-item">
+                        <div class="journey-phase">
+                           <span class="dot yellow"></span>
+                           <p>Phase 2: The Bridge (사용자와의 연결)</p>
+                        </div>
+                        <h4>
+                           기술을 넘어, <strong>사용자를 향한 다리</strong>를
+                           놓다
+                        </h4>
+                        <p>
+                           코드를 작성하는 시간이 길어질수록 기술 자체보다 '이
+                           기술을 사용하는 사람'이 더 중요하다는 것을
+                           깨달았습니다. 이제 저는 복잡한 기술과 사용자 사이의
+                           견고한 '다리'가 되어, 누구나 쉽고 편안하게 서비스를
+                           이용할 수 있는 <strong>직관적인 UI/UX</strong>를
+                           고민합니다.
+                        </p>
+                     </div>
+
+                     <div class="journey-item">
+                        <div class="journey-phase">
+                           <span class="dot green"></span>
+                           <p>Phase 3: The Growth (어제와 오늘의 연결)</p>
+                        </div>
+                        <h4>
+                           어제의 배움을 오늘의
+                           <strong>성장으로 잇는 꾸준함</strong>
+                        </h4>
+                        <p>
+                           매일 마주하는 작은 문제들을 해결하고 그 과정을
+                           기록하며 얻은 배움을 다음 프로젝트의 밑거름으로
+                           삼습니다. 어제의 실패와 오늘의 성공을 단단하게
+                           '연결'하는 <strong>꾸준함</strong>이야말로, 불확실한
+                           문제 앞에서도 길을 잃지 않는 저의 가장 큰 무기입니다.
+                        </p>
+                     </div>
+
+                     <div class="journey-item">
+                        <div class="journey-phase">
+                           <span class="dot blue"></span>
+                           <p>Phase 4: The Commitment (책임감과의 연결)</p>
+                        </div>
+                        <h4>
+                           내가 쓴 코드가 곧 나의 얼굴이라는
+                           <strong>책임감</strong>
+                        </h4>
+                        <p>
+                           단순히 기능이 '작동'하는 것을 넘어, '왜' 이렇게
+                           작성했는지
+                           <strong>명확히 설명할 수 있는 코드</strong>를
+                           지향합니다. 스스로에게 떳떳한 코드를 작성하는
+                           <strong>정직함</strong>과, 내가 만든 결과물이
+                           사용자에게 미칠 영향을 끝까지 책임지는 자세로 모든
+                           프로젝트에 임하겠습니다.
+                        </p>
+                     </div>
+
+                     <div class="journey-item">
+                        <div class="journey-phase">
+                           <span class="dot purple"></span>
+                           <p>Phase 5: The Next Chapter (동료와의 연결)</p>
+                        </div>
+                        <h4>
+                           <strong>함께 배우고 완성해나갈</strong> 다음 장을
+                           향한 열망
+                        </h4>
+                        <p>
+                           아직 모든 것을 알지 못한다는 사실을 인정하는
+                           <strong>겸손한 자세</strong>로, 동료들의 코드와
+                           피드백을 통해 배우고 성장할 준비가 되어 있습니다.
+                           저의 <strong>긍정적인 에너지와 강한 의지</strong>가
+                           팀의 목표와 '연결'되어 더 큰 시너지를 만들어낼 수
+                           있다고 믿습니다. 함께 멋진 프로젝트를 만들어갈 다음
+                           여정을 시작하고 싶습니다.
+                        </p>
+                     </div>
+                  </div>
+               </div>
+               <div
+                  class="chart"
+                  data-animation="zoom-in"
+                  style="transition-delay: 0.4s"
+               >
+                  <canvas id="skill-radar-chart"></canvas>
+               </div>
+            </section>
+
+            <!-- [섹션 3] Projects -->
+            <section id="projects" data-color="#f1c40f">
+               <div class="section-title" data-animation="fade-in-up">
+                  <h2>PROJECTS</h2>
+                  <p>
+                     단순한 기능 구현을 넘어, '왜'를 고민하며 만든 결과물입니다.
+                  </p>
+               </div>
+
+               <div
+                  class="projects-filter"
+                  data-animation="fade-in-up"
+                  style="transition-delay: 0.2s"
+               >
+                  <button class="filter-btn active" data-filter="all">
+                     #All
+                  </button>
+                  <button class="filter-btn" data-filter="interactive-app">
+                     #Interactive App
+                  </button>
+                  <button class="filter-btn" data-filter="responsive-web">
+                     #Responsive Web
+                  </button>
+                  <button class="filter-btn" data-filter="clone-coding">
+                     #Clone Coding
+                  </button>
+               </div>
+
+               <div class="create-btn">
+                  <button id="create-project-btn">프로젝트 등록</button>
+                  <button id="delete-all-btn" class="danger">전체 삭제</button>
+
+                  <div
+                     id="admin-controls"
+                     class="admin-only"
+                     style="display: none"
+                  ></div>
+               </div>
+               <div id="project-grid" class="project-grid">
+                  <div class="project-item skeleton">
+                     <div class="project-image"></div>
+                     <div class="project-info-skeleton">
+                        <div class="project-title-skeleton"></div>
+                        <div class="project-tags-skeleton"></div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+
+            <!-- [섹션 4] Contact-->
+            <section id="contact" data-color="#2ecc71">
+               <div class="contact-container">
+                  <div class="contact-intro" data-animation="fade-in-up">
+                     <div class="contact-intro-title">
+                        <h2>THANK</h2>
+                     </div>
+
+                     <div class="contact-card">
+                        <div class="contact-card-main">
+                           <h2>Shin Jae Jun</h2>
+                           <p class="job-title">Front-End Developer</p>
+                           <p class="message">
+                              <strong>끊임없이 배우고 성장하며</strong> 새로운
+                              도전을 즐깁니다.<br />
+                              <strong>사용자 경험을 최우선</strong>으로
+                              생각하며, 작은 디테일까지 놓치지 않는 꼼꼼함으로
+                              <strong>최고의 결과</strong>를 만들어내고자
+                              합니다.<br />
+                              언제든 편하게 연락 주시면, 제
+                              <strong>열정과 역량</strong>으로 보답하겠습니다.
+                           </p>
+                        </div>
+
+                        <div class="contact-card-info">
+                           <div class="info-item">
+                              <span class="label">EMAIL</span>
+                              <span class="value">o3o_security@naver.com</span>
+                           </div>
+                           <div class="info-item">
+                              <span class="label">PHONE</span>
+                              <span class="value">+82 10-9968-1342</span>
+                           </div>
+                           <div class="info-item">
+                              <span class="label">GITHUB</span>
+                              <a
+                                 href="https://github.com/jaejun0617"
+                                 target="_blank"
+                                 class="value link"
+                                 >github.com/jaejun0617</a
+                              >
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+
+                  <form
+                     id="contact-form"
+                     class="contact-form"
+                     data-animation="fade-in-up"
+                  >
+                     <h3 data-lang-key="contact_form_title">
+                        협업 제안을 기다립니다
+                     </h3>
+
+                     <div class="form-group">
+                        <input
+                           type="text"
+                           id="contact-name"
+                           name="name"
+                           required
+                           autocomplete="off"
+                        />
+                        <label
+                           for="contact-name"
+                           data-lang-key="contact_form_name"
+                           >성함 또는 회사명</label
+                        >
+                        <div class="line"></div>
+                     </div>
+                     <div class="form-group">
+                        <input
+                           type="email"
+                           id="contact-email"
+                           name="email"
+                           required
+                           autocomplete="off"
+                        />
+                        <label
+                           for="contact-email"
+                           data-lang-key="contact_form_email"
+                           >답변 받으실 이메일</label
+                        >
+                        <div class="line"></div>
+                     </div>
+                     <div class="form-group">
+                        <textarea
+                           id="contact-message"
+                           name="message"
+                           rows="5"
+                           required
+                           data-scrollbar
+                        ></textarea>
+                        <label
+                           for="contact-message"
+                           data-lang-key="contact_form_message"
+                           >메시지를 입력하세요...</label
+                        >
+                        <div class="line"></div>
+                     </div>
+
+                     <button type="submit" data-lang-key="contact_form_button">
+                        메시지 전송
+                     </button>
+
+                     <div class="form-divider">
+                        <hr />
+                        <span data-lang-key="contact_form_divider"
+                           >MY WORKSPACE</span
+                        >
+                        <hr />
+                     </div>
+
+                     <div id="map"></div>
+                  </form>
+               </div>
+            </section>
+         </main>
+
+         <!-- 푸터 -->
+         <footer id="footer">
+            <p>
+               © 2025 Shin Jae Jun. Interactive Portfolio. All Rights Reserved.
+            </p>
+         </footer>
+
+         <!-- 관리자 로그인 모달창 -->
+         <div id="admin-modal-wrapper" class="admin-login-modal">
+            <div class="admin-login-content">
+               <button id="modal-close-btn" class="modal-close-btn">
+                  &times;
+               </button>
+               <div class="admin-login-title">
+                  <h3>관리자 로그인</h3>
+               </div>
+               <form id="admin-login-form" class="admin-info">
+                  <input
+                     class="login-id"
+                     type="text"
+                     id="id"
+                     placeholder="관리자 아이디"
+                     required
+                  />
+                  <input
+                     class="login-pw"
+                     type="password"
+                     id="pw"
+                     placeholder="비밀번호"
+                     required
+                  />
+                  <div class="login-btn">
+                     <button type="submit">로그인하기</button>
+                  </div>
+               </form>
+            </div>
+         </div>
+
+         <!-- 프로젝트 추가/수정 모달창 -->
+         <div id="project-form-modal" class="modal-wrapper">
+            <div class="modal-content">
+               <button class="modal-close-btn">&times;</button>
+               <h3 id="project-form-title">새 프로젝트 추가</h3>
+               <form id="project-form">
+                  <input type="hidden" id="project-id" />
+                  <input
+                     type="text"
+                     id="project-title"
+                     placeholder="프로젝트 제목"
+                     required
+                  />
+                  <input
+                     type="text"
+                     id="project-headline"
+                     placeholder="헤드라인 (한 줄 요약)"
+                     required
+                  />
+                  <input
+                     type="text"
+                     id="project-imageSrc"
+                     placeholder="이미지 경로 (e.g., ./assets/image.png)"
+                     required
+                  />
+                  <textarea
+                     id="project-overview"
+                     placeholder="프로젝트 상세 설명"
+                     rows="4"
+                     required
+                  ></textarea>
+                  <input
+                     type="text"
+                     id="project-techStack"
+                     placeholder="기술 스택 (쉼표로 구분, e.g., React,CSS,API)"
+                     required
+                  />
+                  <input
+                     type="text"
+                     id="project-category"
+                     placeholder="카테고리 (쉼표로 구분, e.g., interactive-app,clone-coding)"
+                     required
+                  />
+                  <input
+                     type="text"
+                     id="project-github"
+                     placeholder="GitHub 링크"
+                     required
+                  />
+                  <input
+                     type="text"
+                     id="project-site"
+                     placeholder="사이트 링크"
+                     required
+                  />
+                  <button type="submit">저장하기</button>
+               </form>
+            </div>
+         </div>
+      </div>
+      <div id="fab-copy-toast">이메일 주소가 복사되었습니다!</div>
+      <!-- 플로팅 액션 버튼 그룹 -->
+      <div class="floating-action-buttons">
+         <button
+            class="fab-item"
+            id="fab-email"
+            data-tooltip="o3o_security@naver.com"
+            data-email="o3o_security@naver.com"
+         >
+            <img src="./assets/icons/email-442913.png" alt="Email Icon" />
+         </button>
+
+         <a
+            href="https://open.kakao.com/o/sC80Idtg"
+            target="_blank"
+            class="fab-item"
+            id="fab-kakao"
+            data-tooltip="카카오톡 채팅하기"
+         >
+            <img src="./assets/icons/talk-442913.png" alt="KakaoTalk Icon" />
+         </a>
+
+         <button class="fab-item" id="fab-top" data-tooltip="맨 위로 가기">
+            <img src="./assets/icons/top-442913.png" alt="Top Icon" />
+         </button>
+      </div>
+
+      <script src="js/smooth-scrollbar.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+      <script
+         type="text/javascript"
+         src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c35ed488f2437bca20dc2a9f02e5a396&autoload=false"
+      ></script>
+      <script type="module" src="js/index.js"></script>
+   </body>
+</html>
