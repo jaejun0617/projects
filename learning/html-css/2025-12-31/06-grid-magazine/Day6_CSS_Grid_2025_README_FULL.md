@@ -6,7 +6,6 @@
 ---
 
 ## ✅ 오늘 한 줄 요약
-
 > **Flexbox는 정렬을 위한 도구이고, Grid는 구조(Architecture)를 위한 도구다.**
 
 ---
@@ -24,11 +23,11 @@
 
 ### 1. Grid vs Flexbox — 역할 분리 (Mental Model)
 
-| 구분      | Flexbox       | Grid        |
-| --------- | ------------- | ----------- |
-| 차원      | 1차원         | 2차원       |
-| 역할      | 콘텐츠 정렬   | 구조 설계   |
-| 기준      | Content-out   | Layout-in   |
+| 구분 | Flexbox | Grid |
+|---|---|---|
+| 차원 | 1차원 | 2차원 |
+| 역할 | 콘텐츠 정렬 | 구조 설계 |
+| 기준 | Content-out | Layout-in |
 | 사용 위치 | 컴포넌트 내부 | 페이지 전체 |
 
 📌 실무 공식  
@@ -40,7 +39,7 @@
 
 ```css
 .container {
-   display: grid;
+  display: grid;
 }
 ```
 
@@ -70,21 +69,17 @@ grid-template-columns: 1fr 2fr;
 ```
 
 **의미**
-
 - 고정값(px 등)을 제외한 **남은 공간을 비율로 분배**
 - `1fr 2fr` → 남은 공간을 1:2 비율로 사용
 
 **왜 쓰는가**
-
 - `%`는 전체 기준, `fr`는 **남은 공간 기준**
 - 화면 크기 변화에 더 안정적
 
 **실무 패턴**
-
 ```css
 grid-template-columns: 240px 1fr;
 ```
-
 → 사이드바 고정 + 메인 콘텐츠 유동
 
 📌 **구조 레이아웃에서는 `px + fr` 조합이 가장 안전**
@@ -98,21 +93,17 @@ grid-template-columns: repeat(4, 1fr);
 ```
 
 **의미**
-
 - 동일한 Track 정의를 반복 생성
 - `1fr 1fr 1fr 1fr`과 완전히 동일
 
 **왜 쓰는가**
-
 - 코드 길이 감소
 - 컬럼 수 변경 시 수정 포인트 최소화
 
 **실무 패턴**
-
 ```css
 grid-template-columns: repeat(12, 1fr);
 ```
-
 → 12컬럼 시스템 구현
 
 📌 **같은 폭 컬럼 반복 = 무조건 repeat()**
@@ -126,22 +117,18 @@ grid-template-columns: repeat(3, minmax(200px, 1fr));
 ```
 
 **의미**
-
 - 트랙의 **최소 크기 + 최대 크기**를 동시에 정의
 - `minmax(200px, 1fr)`  
   → 최소 200px 보장, 여유 공간은 1fr까지 확장
 
 **왜 쓰는가**
-
 - 카드 UI에서 너비 붕괴 방지
 - 화면 축소 시 레이아웃 깨짐 방지
 
 **실무 핵심 패턴**
-
 ```css
 grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 ```
-
 - 데스크톱: 다열
 - 모바일: 자동 1열
 - **미디어 쿼리 불필요**
@@ -154,9 +141,9 @@ grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 
 ```css
 .card-grid {
-   display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-   gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
 }
 ```
 
@@ -173,18 +160,15 @@ grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 
 ```css
 .container {
-   grid-template-areas:
-      'header header'
-      'sidebar main'
-      'footer footer';
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
 }
-.header {
-   grid-area: header;
-}
+.header { grid-area: header; }
 ```
 
 **왜 쓰는가**
-
 - 좌표 대신 의미 기반 설계
 - 구조 파악 즉시 가능
 - 미디어 쿼리에서 **구조만 교체**
@@ -197,17 +181,16 @@ grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 
 ```css
 .image {
-   grid-area: 1 / 1 / -1 / -1;
+  grid-area: 1 / 1 / -1 / -1;
 }
 .text {
-   grid-area: 1 / 1 / -1 / -1;
-   z-index: 1;
-   align-self: center;
+  grid-area: 1 / 1 / -1 / -1;
+  z-index: 1;
+  align-self: center;
 }
 ```
 
 **의미**
-
 - 같은 Grid 영역에 배치하여 겹침
 - `position:absolute` 불필요
 
@@ -219,17 +202,15 @@ grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 
 ```css
 .card {
-   display: grid;
-   grid-template-rows: subgrid;
+  display: grid;
+  grid-template-rows: subgrid;
 }
 ```
 
 **의미**
-
 - 자식 Grid가 부모 Grid의 트랙을 그대로 공유
 
 **왜 쓰는가**
-
 - 카드 간 제목/버튼 정렬 완벽 일치
 - 콘텐츠 길이 달라도 정렬 유지
 
@@ -259,7 +240,6 @@ align-content: center;
 ## 🏗️ 미션: 반응형 매거진 레이아웃
 
 ### 구성 요소
-
 - Header
 - Hero (Layering 필수)
 - Articles (auto-fit)
@@ -271,21 +251,21 @@ align-content: center;
 ```css
 /* Mobile */
 .container {
-   grid-template-columns: 1fr;
+  grid-template-columns: 1fr;
 }
 
 /* Tablet */
 @media (min-width: 768px) {
-   .container {
-      grid-template-columns: repeat(2, 1fr);
-   }
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* Desktop */
 @media (min-width: 1024px) {
-   .container {
-      grid-template-columns: repeat(4, 1fr);
-   }
+  .container {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 ```
 
