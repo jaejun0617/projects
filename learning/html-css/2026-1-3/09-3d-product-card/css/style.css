@@ -1,0 +1,247 @@
+:root {
+   --bg: #151515;
+   --card-w: 260px;
+   --card-h: 360px;
+   --radius: 18px;
+   --perspective: 900px;
+   --max-tilt: 12deg;
+
+   /* 하이라이트 기본 위치 */
+   --gx: 50%;
+   --gy: 50%;
+}
+
+* {
+   box-sizing: border-box;
+}
+
+body {
+   margin: 0;
+   min-height: 100vh;
+   display: grid;
+   place-items: center;
+   background: radial-gradient(circle at 30% 20%, #2a2a2a, var(--bg));
+   font-family:
+      system-ui,
+      -apple-system,
+      sans-serif;
+   color: #fff;
+}
+
+/* === 컨테이너 === */
+.card-container {
+   width: var(--card-w);
+   height: var(--card-h);
+   position: relative;
+   perspective: var(--perspective);
+   perspective-origin: center;
+   user-select: none;
+}
+
+/* === 카드 === */
+.card {
+   width: 100%;
+   height: 100%;
+   border-radius: var(--radius);
+   background: linear-gradient(135deg, #4facfe, #00f2fe);
+   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+   position: relative;
+   transform-style: preserve-3d;
+   backface-visibility: hidden;
+   will-change: transform;
+   overflow: hidden;
+
+   /* 기본 상태 */
+   transform: rotateX(0deg) rotateY(0deg);
+   transition:
+      transform 180ms ease,
+      filter 180ms ease;
+}
+
+/* 하이라이트(빛 반사 느낌) */
+.card::before {
+   content: '';
+   position: absolute;
+   inset: -40%;
+   background: radial-gradient(
+      circle at var(--gx) var(--gy),
+      rgba(255, 255, 255, 0.35),
+      rgba(255, 255, 255, 0) 55%
+   );
+   transform: translateZ(60px);
+   pointer-events: none;
+}
+
+/* 내용 */
+.content {
+   position: absolute;
+   inset: 0;
+   padding: 18px;
+   display: grid;
+   gap: 10px;
+   align-content: center;
+   text-align: center;
+   transform-style: preserve-3d;
+}
+
+h3 {
+   margin: 0;
+   font-size: 20px;
+   letter-spacing: 0.2px;
+   transform: translateZ(52px);
+   text-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+}
+
+p {
+   margin: 0;
+   opacity: 0.92;
+   transform: translateZ(38px);
+}
+
+.badge {
+   position: absolute;
+   top: 14px;
+   left: 14px;
+   padding: 6px 10px;
+   border-radius: 999px;
+   background: rgba(0, 0, 0, 0.18);
+   border: 1px solid rgba(255, 255, 255, 0.22);
+   font-size: 12px;
+   transform: translateZ(70px);
+}
+
+.btn {
+   margin: 10px auto 0;
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   gap: 8px;
+   padding: 10px 12px;
+   border-radius: 12px;
+   border: 1px solid rgba(255, 255, 255, 0.35);
+   background: rgba(0, 0, 0, 0.18);
+   color: #fff;
+   cursor: pointer;
+   transform: translateZ(46px);
+}
+
+.btn:focus-visible {
+   outline: 3px solid rgba(255, 255, 255, 0.75);
+   outline-offset: 3px;
+}
+
+/* === 3x3 센서 ===
+      - 카드 위에 올려서 hover 감지
+      - 센터(s5)는 pointer-events:none으로 클릭 영역 확보
+   */
+.sensor {
+   position: absolute;
+   z-index: 2;
+   width: 33.3333%;
+   height: 33.3333%;
+}
+
+/* 좌표 배치 */
+.s1 {
+   top: 0%;
+   left: 0%;
+}
+.s2 {
+   top: 0%;
+   left: 33.3333%;
+}
+.s3 {
+   top: 0%;
+   left: 66.6666%;
+}
+
+.s4 {
+   top: 33.3333%;
+   left: 0%;
+}
+.s5 {
+   top: 33.3333%;
+   left: 33.3333%;
+}
+.s6 {
+   top: 33.3333%;
+   left: 66.6666%;
+}
+
+.s7 {
+   top: 66.6666%;
+   left: 0%;
+}
+.s8 {
+   top: 66.6666%;
+   left: 33.3333%;
+}
+.s9 {
+   top: 66.6666%;
+   left: 66.6666%;
+}
+
+/* 센터는 클릭 보장을 위해 비활성 */
+.s5 {
+   pointer-events: none;
+}
+
+/* hover 시 카드에 transform + 하이라이트 위치 반영 */
+.s1:hover ~ .card {
+   transform: rotateX(var(--max-tilt)) rotateY(calc(var(--max-tilt) * -1));
+   --gx: 20%;
+   --gy: 20%;
+}
+.s2:hover ~ .card {
+   transform: rotateX(var(--max-tilt)) rotateY(0deg);
+   --gx: 50%;
+   --gy: 20%;
+}
+.s3:hover ~ .card {
+   transform: rotateX(var(--max-tilt)) rotateY(var(--max-tilt));
+   --gx: 80%;
+   --gy: 20%;
+}
+
+.s4:hover ~ .card {
+   transform: rotateX(0deg) rotateY(calc(var(--max-tilt) * -1));
+   --gx: 20%;
+   --gy: 50%;
+}
+/* s5는 비활성(클릭 영역) */
+.s6:hover ~ .card {
+   transform: rotateX(0deg) rotateY(var(--max-tilt));
+   --gx: 80%;
+   --gy: 50%;
+}
+
+.s7:hover ~ .card {
+   transform: rotateX(calc(var(--max-tilt) * -1))
+      rotateY(calc(var(--max-tilt) * -1));
+   --gx: 20%;
+   --gy: 80%;
+}
+.s8:hover ~ .card {
+   transform: rotateX(calc(var(--max-tilt) * -1)) rotateY(0deg);
+   --gx: 50%;
+   --gy: 80%;
+}
+.s9:hover ~ .card {
+   transform: rotateX(calc(var(--max-tilt) * -1)) rotateY(var(--max-tilt));
+   --gx: 80%;
+   --gy: 80%;
+}
+
+/* 컨테이너에서 포인터가 빠지면 자연스럽게 0으로 복귀 */
+.card-container:not(:hover) .card {
+   transform: rotateX(0deg) rotateY(0deg);
+   --gx: 50%;
+   --gy: 50%;
+}
+
+/* 모션 최소화 설정 존중 */
+@media (prefers-reduced-motion: reduce) {
+   .card {
+      transition: none !important;
+   }
+}
