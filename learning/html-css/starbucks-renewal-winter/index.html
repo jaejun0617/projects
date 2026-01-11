@@ -38,6 +38,17 @@
          <main class="site__main">
             <section class="home__hero"></section>
             <section class="featured__picks" aria-label="Featured Picks">
+               <div class="featured__overlay">
+                  <div class="featured__title">
+                     <h2>Winter Picks</h2>
+                  </div>
+                  <div class="featured__sub__title">
+                     <p>
+                        차가운 계절 속, 따뜻한 순간을 채워줄 스타벅스의 겨울
+                        추천
+                     </p>
+                  </div>
+               </div>
                <div class="container">
                   <div class="featured__list">
                      <ul>
@@ -179,10 +190,523 @@
                   </div>
                </div>
             </section>
+            <section class="menu__preview" aria-label="Winter Menu Preview">
+               <div class="container">
+                  <header class="menu__overlay">
+                     <h2 class="menu__title">Winter Menu</h2>
+                     <p class="menu__sub">
+                        겨울 시즌 메뉴를 카테고리별로 확인하세요.
+                     </p>
+                  </header>
 
-            <section class="menu__preview">
-               <div class="menu__grid grid"></div>
+                  <div class="menu__filter">
+                     <!-- Category radios (CSS only) -->
+                     <input
+                        type="radio"
+                        name="menu-filter"
+                        id="filter-all"
+                        checked
+                     />
+                     <input
+                        type="radio"
+                        name="menu-filter"
+                        id="filter-coffee"
+                     />
+                     <input type="radio" name="menu-filter" id="filter-ade" />
+                     <input
+                        type="radio"
+                        name="menu-filter"
+                        id="filter-dessert"
+                     />
+                     <input type="radio" name="menu-filter" id="filter-salad" />
+                     <input
+                        type="radio"
+                        name="menu-filter"
+                        id="filter-sandwich"
+                     />
+                     <input type="radio" name="menu-filter" id="filter-fruit" />
+                     <input
+                        type="radio"
+                        name="menu-filter"
+                        id="filter-yogurt"
+                     />
+
+                     <!-- More toggle (CSS only) -->
+                     <input type="checkbox" id="menu-more" />
+
+                     <!-- Tabs -->
+                     <div
+                        class="menu__filter__tabs"
+                        role="tablist"
+                        aria-label="Menu categories"
+                     >
+                        <label for="filter-all" role="tab">All</label>
+                        <label for="filter-coffee" role="tab">Coffee</label>
+                        <label for="filter-ade" role="tab">Ade</label>
+                        <label for="filter-dessert" role="tab">Dessert</label>
+                        <label for="filter-salad" role="tab">Salad</label>
+                        <label for="filter-sandwich" role="tab">Sandwich</label>
+                        <label for="filter-fruit" role="tab">Fruit</label>
+                        <label for="filter-yogurt" role="tab">Yogurt</label>
+                     </div>
+
+                     <!-- Grid (20 items) -->
+                     <div class="menu__grid">
+                        <!-- Coffee (4) -->
+                        <article
+                           class="menu__card"
+                           data-category="coffee"
+                           data-badge="hot"
+                        >
+                           <a class="menu__card__inner" href="#">
+                              <span class="menu__badge" aria-label="HOT"
+                                 >HOT</span
+                              >
+                              <img
+                                 class="menu__thumb"
+                                 src="./assets/img/section__2/coffee__1.png"
+                                 alt="윈터 시그니처 라떼"
+                                 loading="lazy"
+                                 decoding="async"
+                              />
+                              <div class="menu__meta">
+                                 <strong class="menu__name"
+                                    >윈터 시그니처 라떼</strong
+                                 >
+                                 <p class="menu__desc">
+                                    부드러운 라떼에 겨울 향을 더한 클래식.
+                                 </p>
+                              </div>
+                           </a>
+                        </article>
+
+                        <article
+                           class="menu__card"
+                           data-category="coffee"
+                           data-badge="hot"
+                        >
+                           <a class="menu__card__inner" href="#">
+                              <span class="menu__badge" aria-label="HOT"
+                                 >HOT</span
+                              >
+                              <img
+                                 class="menu__thumb"
+                                 src="./assets/img/menu/coffee_02.png"
+                                 alt="토피넛 크림 라떼"
+                                 loading="lazy"
+                                 decoding="async"
+                              />
+                              <div class="menu__meta">
+                                 <strong class="menu__name"
+                                    >토피넛 크림 라떼</strong
+                                 >
+                                 <p class="menu__desc">
+                                    고소한 토피넛 풍미와 크림의 밸런스.
+                                 </p>
+                              </div>
+                           </a>
+                        </article>
+
+                        <article
+                           class="menu__card"
+                           data-category="coffee"
+                           data-badge="new"
+                        >
+                           <a class="menu__card__inner" href="#">
+                              <span class="menu__badge" aria-label="NEW"
+                                 >NEW</span
+                              >
+                              <img
+                                 class="menu__thumb"
+                                 src="./assets/img/menu/coffee_03.png"
+                                 alt="윈터 스파이스 아메리카노"
+                                 loading="lazy"
+                                 decoding="async"
+                              />
+                              <div class="menu__meta">
+                                 <strong class="menu__name"
+                                    >윈터 스파이스 아메리카노</strong
+                                 >
+                                 <p class="menu__desc">
+                                    깔끔한 커피에 은은한 스파이스 노트.
+                                 </p>
+                              </div>
+                           </a>
+                        </article>
+
+                        <article class="menu__card" data-category="coffee">
+                           <a class="menu__card__inner" href="#">
+                              <img
+                                 class="menu__thumb"
+                                 src="./assets/img/menu/coffee_04.png"
+                                 alt="콜드브루(윈터)"
+                                 loading="lazy"
+                                 decoding="async"
+                              />
+                              <div class="menu__meta">
+                                 <strong class="menu__name"
+                                    >콜드브루(윈터)</strong
+                                 >
+                                 <p class="menu__desc">
+                                    차가운 계절에도 선명한 풍미 그대로.
+                                 </p>
+                              </div>
+                           </a>
+                        </article>
+
+                        <!-- Ade (3) -->
+                        <article
+                           class="menu__card"
+                           data-category="ade"
+                           data-badge="new"
+                        >
+                           <a class="menu__card__inner" href="#">
+                              <span class="menu__badge" aria-label="NEW"
+                                 >NEW</span
+                              >
+                              <img
+                                 class="menu__thumb"
+                                 src="./assets/img/menu/ade_01.png"
+                                 alt="시트러스 윈터 에이드"
+                                 loading="lazy"
+                                 decoding="async"
+                              />
+                              <div class="menu__meta">
+                                 <strong class="menu__name"
+                                    >시트러스 윈터 에이드</strong
+                                 >
+                                 <p class="menu__desc">
+                                    상큼한 시트러스와 탄산의 청량감.
+                                 </p>
+                              </div>
+                           </a>
+                        </article>
+
+                        <article class="menu__card" data-category="ade">
+                           <a class="menu__card__inner" href="#">
+                              <img
+                                 class="menu__thumb"
+                                 src="./assets/img/menu/ade_02.png"
+                                 alt="베리 스파클 에이드"
+                                 loading="lazy"
+                                 decoding="async"
+                              />
+                              <div class="menu__meta">
+                                 <strong class="menu__name"
+                                    >베리 스파클 에이드</strong
+                                 >
+                                 <p class="menu__desc">
+                                    베리 향을 가볍게 즐기는 리프레시.
+                                 </p>
+                              </div>
+                           </a>
+                        </article>
+
+                        <article class="menu__card" data-category="ade">
+                           <a class="menu__card__inner" href="#">
+                              <img
+                                 class="menu__thumb"
+                                 src="./assets/img/menu/ade_03.png"
+                                 alt="애플 민트 에이드"
+                                 loading="lazy"
+                                 decoding="async"
+                              />
+                              <div class="menu__meta">
+                                 <strong class="menu__name"
+                                    >애플 민트 에이드</strong
+                                 >
+                                 <p class="menu__desc">
+                                    사과의 달콤함 + 민트의 산뜻함.
+                                 </p>
+                              </div>
+                           </a>
+                        </article>
+
+                        <!-- Dessert (3) -->
+                        <article
+                           class="menu__card"
+                           data-category="dessert"
+                           data-badge="hot"
+                        >
+                           <a class="menu__card__inner" href="#">
+                              <span class="menu__badge" aria-label="HOT"
+                                 >HOT</span
+                              >
+                              <img
+                                 class="menu__thumb"
+                                 src="./assets/img/menu/dessert_01.png"
+                                 alt="초코 브라우니"
+                                 loading="lazy"
+                                 decoding="async"
+                              />
+                              <div class="menu__meta">
+                                 <strong class="menu__name"
+                                    >초코 브라우니</strong
+                                 >
+                                 <p class="menu__desc">
+                                    진한 초콜릿의 밀도, 커피와 완벽 페어링.
+                                 </p>
+                              </div>
+                           </a>
+                        </article>
+
+                        <article class="menu__card" data-category="dessert">
+                           <a class="menu__card__inner" href="#">
+                              <img
+                                 class="menu__thumb"
+                                 src="./assets/img/menu/dessert_02.png"
+                                 alt="치즈 케이크"
+                                 loading="lazy"
+                                 decoding="async"
+                              />
+                              <div class="menu__meta">
+                                 <strong class="menu__name">치즈 케이크</strong>
+                                 <p class="menu__desc">
+                                    부드러운 크림치즈의 깊은 풍미.
+                                 </p>
+                              </div>
+                           </a>
+                        </article>
+
+                        <article class="menu__card" data-category="dessert">
+                           <a class="menu__card__inner" href="#">
+                              <img
+                                 class="menu__thumb"
+                                 src="./assets/img/menu/dessert_03.png"
+                                 alt="윈터 쿠키"
+                                 loading="lazy"
+                                 decoding="async"
+                              />
+                              <div class="menu__meta">
+                                 <strong class="menu__name">윈터 쿠키</strong>
+                                 <p class="menu__desc">
+                                    바삭한 식감, 부담 없는 달콤함.
+                                 </p>
+                              </div>
+                           </a>
+                        </article>
+
+                        <!-- Salad (3) -->
+                        <article
+                           class="menu__card"
+                           data-category="salad"
+                           data-badge="new"
+                        >
+                           <a class="menu__card__inner" href="#">
+                              <span class="menu__badge" aria-label="NEW"
+                                 >NEW</span
+                              >
+                              <img
+                                 class="menu__thumb"
+                                 src="./assets/img/menu/salad_01.png"
+                                 alt="그린 밸런스 샐러드"
+                                 loading="lazy"
+                                 decoding="async"
+                              />
+                              <div class="menu__meta">
+                                 <strong class="menu__name"
+                                    >그린 밸런스 샐러드</strong
+                                 >
+                                 <p class="menu__desc">
+                                    신선한 그린과 단백질 토핑의 조화.
+                                 </p>
+                              </div>
+                           </a>
+                        </article>
+
+                        <article class="menu__card" data-category="salad">
+                           <a class="menu__card__inner" href="#">
+                              <img
+                                 class="menu__thumb"
+                                 src="./assets/img/menu/salad_02.png"
+                                 alt="치킨 시저 샐러드"
+                                 loading="lazy"
+                                 decoding="async"
+                              />
+                              <div class="menu__meta">
+                                 <strong class="menu__name"
+                                    >치킨 시저 샐러드</strong
+                                 >
+                                 <p class="menu__desc">
+                                    든든한 치킨과 시저 드레싱.
+                                 </p>
+                              </div>
+                           </a>
+                        </article>
+
+                        <article class="menu__card" data-category="salad">
+                           <a class="menu__card__inner" href="#">
+                              <img
+                                 class="menu__thumb"
+                                 src="./assets/img/menu/salad_03.png"
+                                 alt="시트러스 샐러드"
+                                 loading="lazy"
+                                 decoding="async"
+                              />
+                              <div class="menu__meta">
+                                 <strong class="menu__name"
+                                    >시트러스 샐러드</strong
+                                 >
+                                 <p class="menu__desc">
+                                    상큼한 과일과 채소의 라이트 밸런스.
+                                 </p>
+                              </div>
+                           </a>
+                        </article>
+
+                        <!-- Sandwich (3) -->
+                        <article class="menu__card" data-category="sandwich">
+                           <a class="menu__card__inner" href="#">
+                              <img
+                                 class="menu__thumb"
+                                 src="./assets/img/menu/sandwich_01.png"
+                                 alt="에그 샌드위치"
+                                 loading="lazy"
+                                 decoding="async"
+                              />
+                              <div class="menu__meta">
+                                 <strong class="menu__name"
+                                    >에그 샌드위치</strong
+                                 >
+                                 <p class="menu__desc">
+                                    부드러운 에그 필링, 간편한 한 끼.
+                                 </p>
+                              </div>
+                           </a>
+                        </article>
+
+                        <article class="menu__card" data-category="sandwich">
+                           <a class="menu__card__inner" href="#">
+                              <img
+                                 class="menu__thumb"
+                                 src="./assets/img/menu/sandwich_02.png"
+                                 alt="터키 햄 샌드위치"
+                                 loading="lazy"
+                                 decoding="async"
+                              />
+                              <div class="menu__meta">
+                                 <strong class="menu__name"
+                                    >터키 햄 샌드위치</strong
+                                 >
+                                 <p class="menu__desc">
+                                    담백한 햄과 채소의 클래식 조합.
+                                 </p>
+                              </div>
+                           </a>
+                        </article>
+
+                        <article class="menu__card" data-category="sandwich">
+                           <a class="menu__card__inner" href="#">
+                              <img
+                                 class="menu__thumb"
+                                 src="./assets/img/menu/sandwich_03.png"
+                                 alt="치즈 멜트 샌드위치"
+                                 loading="lazy"
+                                 decoding="async"
+                              />
+                              <div class="menu__meta">
+                                 <strong class="menu__name"
+                                    >치즈 멜트 샌드위치</strong
+                                 >
+                                 <p class="menu__desc">
+                                    치즈의 고소함을 진하게 즐기는 선택.
+                                 </p>
+                              </div>
+                           </a>
+                        </article>
+
+                        <!-- Fruit (2) -->
+                        <article class="menu__card" data-category="fruit">
+                           <a class="menu__card__inner" href="#">
+                              <img
+                                 class="menu__thumb"
+                                 src="./assets/img/menu/fruit_01.png"
+                                 alt="프레시 과일 컵"
+                                 loading="lazy"
+                                 decoding="async"
+                              />
+                              <div class="menu__meta">
+                                 <strong class="menu__name"
+                                    >프레시 과일 컵</strong
+                                 >
+                                 <p class="menu__desc">
+                                    가볍게 곁들이는 신선한 한 컵.
+                                 </p>
+                              </div>
+                           </a>
+                        </article>
+
+                        <article class="menu__card" data-category="fruit">
+                           <a class="menu__card__inner" href="#">
+                              <img
+                                 class="menu__thumb"
+                                 src="./assets/img/menu/fruit_02.png"
+                                 alt="시즈널 과일 믹스"
+                                 loading="lazy"
+                                 decoding="async"
+                              />
+                              <div class="menu__meta">
+                                 <strong class="menu__name"
+                                    >시즈널 과일 믹스</strong
+                                 >
+                                 <p class="menu__desc">
+                                    계절 과일로 구성한 산뜻한 조합.
+                                 </p>
+                              </div>
+                           </a>
+                        </article>
+
+                        <!-- Yogurt (2) -->
+                        <article class="menu__card" data-category="yogurt">
+                           <a class="menu__card__inner" href="#">
+                              <img
+                                 class="menu__thumb"
+                                 src="./assets/img/menu/yogurt_01.png"
+                                 alt="플레인 요거트"
+                                 loading="lazy"
+                                 decoding="async"
+                              />
+                              <div class="menu__meta">
+                                 <strong class="menu__name"
+                                    >플레인 요거트</strong
+                                 >
+                                 <p class="menu__desc">
+                                    담백하게 즐기는 데일리 베이스.
+                                 </p>
+                              </div>
+                           </a>
+                        </article>
+
+                        <article class="menu__card" data-category="yogurt">
+                           <a class="menu__card__inner" href="#">
+                              <img
+                                 class="menu__thumb"
+                                 src="./assets/img/menu/yogurt_02.png"
+                                 alt="베리 요거트"
+                                 loading="lazy"
+                                 decoding="async"
+                              />
+                              <div class="menu__meta">
+                                 <strong class="menu__name">베리 요거트</strong>
+                                 <p class="menu__desc">
+                                    베리의 산뜻함과 요거트의 부드러움.
+                                 </p>
+                              </div>
+                           </a>
+                        </article>
+                     </div>
+
+                     <!-- Actions (All에서만 노출) -->
+                     <div class="menu__actions">
+                        <label class="menu__more" for="menu-more">
+                           <span class="menu__more__open">더보기</span>
+                           <span class="menu__more__close">접기</span>
+                        </label>
+                     </div>
+                  </div>
+               </div>
             </section>
+
             <section class="rewards__teaser"></section>
             <section class="store__experience"></section>
             <section class="brand__story"></section>

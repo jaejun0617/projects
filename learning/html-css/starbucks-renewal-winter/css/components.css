@@ -149,6 +149,10 @@ button {
    }
 }
 
+section {
+   min-height: 100svh;
+}
+
 /* =========================================================
      2) LAYOUT (wrapper / container / header / main / footer frame)
      ========================================================= */
@@ -191,9 +195,9 @@ button {
 }
 
 /* main (temporary frame) */
-.site__main {
+/* .site__main {
    border: 1px solid var(--brand-500);
-}
+} */
 
 /* footer frame */
 .site__footer {
@@ -232,6 +236,29 @@ button {
    background: url('../assets/img/section__2/section_bg.png') center / cover
       no-repeat;
    overflow: hidden;
+}
+
+.featured__overlay {
+   position: absolute;
+   /* border: 1px solid red; */
+   width: 100%;
+   height: 30%;
+   z-index: 3;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   line-height: 2;
+}
+
+.featured__title {
+   font-size: 32px;
+   color: #1e3932;
+}
+
+.featured__sub__title {
+   font-size: 24px;
+   color: #6b7f7a;
 }
 
 /* overlay */
@@ -299,8 +326,7 @@ button {
       box-shadow 360ms var(--ease-out),
       outline-color 200ms var(--ease-out);
 
-   outline: 2px solid transparent;
-   outline-offset: 6px;
+   /* border: 3px solid var(--accent-500); */
 
    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.22);
 }
@@ -343,7 +369,7 @@ button {
    display: block;
 
    padding: clamp(12px, 1.2vw, 18px);
-   background: transparent;
+
    filter: drop-shadow(0 18px 24px rgba(0, 0, 0, 0.25));
 }
 
@@ -452,5 +478,339 @@ button {
       left: -14px;
       width: 56px;
       height: 56px;
+   }
+}
+
+/* =========================================================
+   Menu Preview 
+   ========================================================= */
+
+.menu__overlay {
+   display: grid;
+   gap: 10px;
+   margin-bottom: clamp(18px, 3vh, 28px);
+   place-items: center;
+   padding: 2rem 0rem;
+   /* border: 1px solid red; */
+}
+
+.menu__title {
+   font-size: clamp(22px, 2.2vw, 32px);
+   letter-spacing: var(--ls-tight);
+   color: #1e3932;
+   margin: 0;
+}
+
+.menu__sub {
+   font-size: clamp(14px, 1.2vw, 18px);
+   color: #6b7f7a;
+   line-height: 1.5;
+   margin: 0;
+}
+
+/* .menu__preview {
+   display: flex;
+   width: 100%;
+   justify-content: center;
+} */
+
+/* hide form controls */
+.menu__filter input {
+   position: absolute;
+   inline-size: 1px;
+   block-size: 1px;
+   overflow: hidden;
+   clip: rect(0 0 0 0);
+   white-space: nowrap;
+}
+
+/* Tabs */
+.menu__filter__tabs {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 8px;
+   margin-bottom: 18px;
+   justify-content: center;
+}
+
+.menu__filter__tabs label {
+   padding: 8px 14px;
+   border-radius: 999px;
+   font-size: 14px;
+   cursor: pointer;
+   background: #f3f6f5;
+   color: #1e3932;
+   transition:
+      background 200ms ease,
+      color 200ms ease,
+      transform 200ms ease;
+}
+
+.menu__filter__tabs label:hover {
+   background: #e5ecea;
+   transform: translateY(-1px);
+}
+
+/* active tab */
+#filter-all:checked ~ .menu__filter__tabs label[for='filter-all'],
+#filter-coffee:checked ~ .menu__filter__tabs label[for='filter-coffee'],
+#filter-ade:checked ~ .menu__filter__tabs label[for='filter-ade'],
+#filter-dessert:checked ~ .menu__filter__tabs label[for='filter-dessert'],
+#filter-salad:checked ~ .menu__filter__tabs label[for='filter-salad'],
+#filter-sandwich:checked ~ .menu__filter__tabs label[for='filter-sandwich'],
+#filter-fruit:checked ~ .menu__filter__tabs label[for='filter-fruit'],
+#filter-yogurt:checked ~ .menu__filter__tabs label[for='filter-yogurt'] {
+   background: #1e3932;
+   color: #ffffff;
+}
+
+/* Grid */
+.menu__grid {
+   display: grid;
+   grid-template-columns: repeat(4, minmax(0, 1fr));
+   gap: clamp(12px, 1.6vw, 18px);
+}
+
+.menu__card__inner {
+   position: relative;
+   display: grid;
+   grid-template-rows: 400px auto;
+   height: 100%;
+   border-radius: var(--radius-sm);
+   overflow: hidden;
+
+   background: color-mix(in oklab, var(--bg-0), #ffffff 10%);
+   border: 1px solid var(--line-200);
+   box-shadow: 0 12px 26px rgba(0, 0, 0, 0.14);
+   text-decoration: none;
+
+   transition:
+      transform 280ms var(--ease-out),
+      box-shadow 280ms var(--ease-out),
+      border-color 280ms var(--ease-out);
+}
+
+.menu__card__inner:hover {
+   transform: translateY(-10px);
+   border-color: color-mix(in oklab, #1e3932, #ffffff 55%);
+   box-shadow: 0 22px 40px rgba(0, 0, 0, 0.18);
+}
+
+.menu__thumb {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   display: block;
+   /* border: 1px solid red; */
+   padding: 14px;
+   background: radial-gradient(
+      closest-side,
+      rgba(255, 255, 255, 0.75),
+      rgba(255, 255, 255, 0)
+   );
+   filter: drop-shadow(0 16px 20px rgba(0, 0, 0, 0.18));
+}
+
+.menu__meta {
+   display: grid;
+   gap: 6px;
+   padding: 12px 14px 14px;
+   background: color-mix(in oklab, var(--bg-0), #ffffff 18%);
+}
+
+.menu__name {
+   font-size: 16px;
+   font-weight: var(--fw-semibold);
+   color: var(--text-900);
+}
+
+.menu__desc {
+   font-size: 14px;
+   color: var(--text-600);
+   line-height: 1.45;
+   margin: 0;
+}
+
+/* Badge */
+.menu__badge {
+   position: absolute;
+   top: 12px;
+   left: 12px;
+   z-index: 2;
+
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+
+   height: 28px;
+   padding: 0 10px;
+   border-radius: 999px;
+
+   font-size: 12px;
+   font-weight: 800;
+   letter-spacing: 0.02em;
+
+   color: #ffffff;
+   background: #1e3932;
+   box-shadow: 0 10px 16px rgba(0, 0, 0, 0.16);
+}
+
+.menu__card[data-badge='hot'] .menu__badge {
+   background: #1e3932;
+}
+.menu__card[data-badge='new'] .menu__badge {
+   background: #b3412e;
+}
+.menu__card:not([data-badge]) .menu__badge {
+   display: none;
+}
+
+.menu__card {
+   animation: menuFadeIn 220ms ease-out both;
+}
+
+@keyframes menuFadeIn {
+   from {
+      opacity: 0;
+      transform: translateY(6px) scale(0.985);
+   }
+   to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+   }
+}
+
+/* ===========================
+     filter 
+  =========================== */
+.menu__grid .menu__card {
+   display: block;
+}
+
+/* Coffee */
+.menu__filter:has(#filter-coffee:checked)
+   .menu__card:not([data-category='coffee']) {
+   display: none;
+}
+/* Ade */
+.menu__filter:has(#filter-ade:checked) .menu__card:not([data-category='ade']) {
+   display: none;
+}
+/* Dessert */
+.menu__filter:has(#filter-dessert:checked)
+   .menu__card:not([data-category='dessert']) {
+   display: none;
+}
+/* Salad */
+.menu__filter:has(#filter-salad:checked)
+   .menu__card:not([data-category='salad']) {
+   display: none;
+}
+/* Sandwich */
+.menu__filter:has(#filter-sandwich:checked)
+   .menu__card:not([data-category='sandwich']) {
+   display: none;
+}
+/* Fruit */
+.menu__filter:has(#filter-fruit:checked)
+   .menu__card:not([data-category='fruit']) {
+   display: none;
+}
+/* Yogurt */
+.menu__filter:has(#filter-yogurt:checked)
+   .menu__card:not([data-category='yogurt']) {
+   display: none;
+}
+
+/* (A) All 상태에서 grid 최소 높이 확보 */
+.menu__filter:has(#filter-all:checked) .menu__grid {
+   min-height: 900px;
+}
+
+/* (B) All + more OFF일 때 9번째부터 "부드럽게 숨김" */
+.menu__filter:has(#filter-all:checked):not(:has(#menu-more:checked))
+   .menu__card:nth-child(n + 9) {
+   visibility: hidden;
+   pointer-events: none;
+   height: 0;
+   margin: 0;
+   padding: 0;
+   overflow: hidden;
+}
+
+/* ===========================
+     Actions (More button)
+     - only show when All is active
+     - sticky to reduce perceived jump
+  =========================== */
+.menu__actions {
+   display: none;
+}
+.menu__filter:has(#filter-all:checked) .menu__actions {
+   display: block;
+}
+
+.menu__actions {
+   width: fit-content;
+   margin: 18px auto 0;
+   position: sticky;
+   bottom: 12px;
+   z-index: 2;
+}
+
+.menu__more {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   height: 44px;
+   padding: 0 18px;
+   border-radius: 999px;
+   cursor: pointer;
+   user-select: none;
+
+   background: #1e3932;
+   color: #fff;
+   font-weight: 800;
+
+   box-shadow: 0 14px 26px rgba(0, 0, 0, 0.16);
+}
+
+/* "더보기/접기" 텍스트 토글 */
+.menu__more__close {
+   display: none;
+}
+#menu-more:checked
+   ~ .menu__filter__tabs
+   ~ .menu__grid
+   ~ .menu__actions
+   .menu__more__open {
+   display: none;
+}
+#menu-more:checked
+   ~ .menu__filter__tabs
+   ~ .menu__grid
+   ~ .menu__actions
+   .menu__more__close {
+   display: inline;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+   .menu__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+   }
+
+   .menu__filter:has(#filter-all:checked) .menu__grid {
+      min-height: 1200px;
+   }
+}
+
+@media (max-width: 640px) {
+   .menu__grid {
+      grid-template-columns: 1fr;
+   }
+
+   .menu__filter:has(#filter-all:checked) .menu__grid {
+      min-height: 1400px;
    }
 }
