@@ -4,25 +4,25 @@
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-      <!-- 디자인 토큰: 컬러/간격/타이포/모션 등 전역 기준값 -->
+      <!-- 전역 디자인 기준값(토큰) -->
       <link rel="stylesheet" href="./css/tokens.css" />
 
-      <!-- 베이스 스타일: reset, body, 기본 타이포그래피, 접근성 초기값 -->
+      <!-- 기본 리셋/타이포/접근성 초기화 -->
       <link rel="stylesheet" href="./css/base.css" />
 
-      <!-- 레이아웃 프레임: header/footer/grid/container 구조 정의 -->
+      <!-- 레이아웃 프레임(컨테이너/그리드/헤더/푸터) -->
       <link rel="stylesheet" href="./css/layout.css" />
 
-      <!-- 컴포넌트: 버튼/카드/배지/히어로 등 재사용 UI -->
+      <!-- 재사용 UI 컴포넌트 스타일 -->
       <link rel="stylesheet" href="./css/components.css" />
 
-      <!-- 페이지 전용 스타일: 특정 페이지에서만 필요한 보정 -->
+      <!-- 페이지 전용 보정 스타일 -->
       <link rel="stylesheet" href="./css/pages.css" />
 
-      <!-- 유틸리티: gap, sr-only, visually-hidden 같은 헬퍼 클래스 -->
+      <!-- 유틸리티 헬퍼 클래스 모음 -->
       <link rel="stylesheet" href="./css/utilities.css" />
 
-      <!-- 눈 파티클 배경 -->
+      <!-- 눈 파티클 배경 스타일 -->
       <link rel="stylesheet" href="./css/snow.css" />
 
       <title>Starbucks Winter Renewal</title>
@@ -30,30 +30,36 @@
 
    <body>
       <div class="wrapper">
-         <!-- 헤더 -->
+         <!-- 상단 헤더 영역 -->
          <header class="site__header">
+            <!-- 헤더 콘텐츠 컨테이너 -->
             <div class="container"></div>
          </header>
-         <!-- 메인 -->
+
+         <!-- 페이지 메인 콘텐츠 영역 -->
          <main class="site__main">
+            <!-- 섹션1: 히어로(스켈레톤 상태) -->
             <section class="home__hero"></section>
+
+            <!-- 섹션2: 추천 픽 카드 섹션 -->
             <section class="featured__picks" aria-label="Featured Picks">
-               <div class="featured__overlay">
-                  <div class="featured__title">
-                     <h2>Winter Picks</h2>
-                  </div>
-                  <div class="featured__sub__title">
-                     <p>
-                        차가운 계절 속, 따뜻한 순간을 채워줄 스타벅스의 겨울
-                        추천
-                     </p>
-                  </div>
-               </div>
+               <!-- 섹션2 제목/설명 오버레이 -->
+               <header class="menu__overlay">
+                  <h2 class="menu__title">Winter Picks</h2>
+                  <p class="menu__sub">
+                     차가운 계절 속, 따뜻한 순간을 채워줄 스타벅스의 겨울 추천
+                  </p>
+               </header>
+
+               <!-- 섹션2 콘텐츠 컨테이너 -->
                <div class="container">
+                  <!-- 섹션2 카드 리스트 래퍼 -->
                   <div class="featured__list">
+                     <!-- 추천 픽 카드 목록 -->
                      <ul>
-                        <!-- Card 1 -->
+                        <!-- 카드1: 아데스 픽 -->
                         <li class="featured__card">
+                           <!-- 카드 상단 배지 배경 -->
                            <span class="featured_bg" aria-hidden="true">
                               <img
                                  src="./assets/img/section__2/ades_bg.png"
@@ -61,6 +67,7 @@
                               />
                            </span>
 
+                           <!-- 카드 이미지 영역 -->
                            <div class="featured__media">
                               <img
                                  src="./assets/img/section__2/ades.png"
@@ -70,6 +77,7 @@
                               />
                            </div>
 
+                           <!-- 카드 텍스트 설명 영역 -->
                            <div class="featured__desc">
                               <strong>아데스 스파클링</strong>
                               <p>
@@ -79,8 +87,9 @@
                            </div>
                         </li>
 
-                        <!-- Card 2 -->
+                        <!-- 카드2: 커피 픽 -->
                         <li class="featured__card">
+                           <!-- 카드 상단 배지 배경 -->
                            <span class="featured_bg" aria-hidden="true">
                               <img
                                  src="./assets/img/section__2/coffee_bg.png"
@@ -88,6 +97,7 @@
                               />
                            </span>
 
+                           <!-- 카드 이미지 영역 -->
                            <div class="featured__media">
                               <img
                                  src="./assets/img/section__2/coffee__1.png"
@@ -97,6 +107,7 @@
                               />
                            </div>
 
+                           <!-- 카드 텍스트 설명 영역 -->
                            <div class="featured__desc">
                               <strong>시그니처 커피</strong>
                               <p>
@@ -106,8 +117,9 @@
                            </div>
                         </li>
 
-                        <!-- Card 3 -->
+                        <!-- 카드3: 디저트 픽 -->
                         <li class="featured__card">
+                           <!-- 카드 상단 배지 배경 -->
                            <span class="featured_bg" aria-hidden="true">
                               <img
                                  src="./assets/img/section__2/dessert_bg.png"
@@ -115,6 +127,7 @@
                               />
                            </span>
 
+                           <!-- 카드 이미지 영역 -->
                            <div class="featured__media">
                               <img
                                  src="./assets/img/section__2/dessert_1.png"
@@ -124,6 +137,7 @@
                               />
                            </div>
 
+                           <!-- 카드 텍스트 설명 영역 -->
                            <div class="featured__desc">
                               <strong>데일리 디저트</strong>
                               <p>
@@ -133,8 +147,9 @@
                            </div>
                         </li>
 
-                        <!-- Card 4 -->
+                        <!-- 카드4: 과일/요거트 픽 -->
                         <li class="featured__card">
+                           <!-- 카드 상단 배지 배경 -->
                            <span class="featured_bg" aria-hidden="true">
                               <img
                                  src="./assets/img/section__2/fruit__yogurt__bg.png"
@@ -142,6 +157,7 @@
                               />
                            </span>
 
+                           <!-- 카드 이미지 영역 -->
                            <div class="featured__media">
                               <img
                                  src="./assets/img/section__2/fruit__yogurt.png"
@@ -151,6 +167,7 @@
                               />
                            </div>
 
+                           <!-- 카드 텍스트 설명 영역 -->
                            <div class="featured__desc">
                               <strong>프룻 요거트</strong>
                               <p>
@@ -160,8 +177,9 @@
                            </div>
                         </li>
 
-                        <!-- Card 5 -->
+                        <!-- 카드5: 샐러드/샌드위치 픽 -->
                         <li class="featured__card">
+                           <!-- 카드 상단 배지 배경 -->
                            <span class="featured_bg" aria-hidden="true">
                               <img
                                  src="./assets/img/section__2/salad__sandwich__bg.png"
@@ -169,6 +187,7 @@
                               />
                            </span>
 
+                           <!-- 카드 이미지 영역 -->
                            <div class="featured__media">
                               <img
                                  src="./assets/img/section__2/salad__sandwich.png"
@@ -178,6 +197,7 @@
                               />
                            </div>
 
+                           <!-- 카드 텍스트 설명 영역 -->
                            <div class="featured__desc">
                               <strong>샐러드 &amp; 샌드위치</strong>
                               <p>
@@ -190,8 +210,12 @@
                   </div>
                </div>
             </section>
+
+            <!-- 섹션3: 메뉴 프리뷰(카테고리 필터/더보기) -->
             <section class="menu__preview" aria-label="Winter Menu Preview">
+               <!-- 섹션3 콘텐츠 컨테이너 -->
                <div class="container">
+                  <!-- 섹션3 제목/설명 -->
                   <header class="menu__overlay">
                      <h2 class="menu__title">Winter Menu</h2>
                      <p class="menu__sub">
@@ -199,8 +223,9 @@
                      </p>
                   </header>
 
+                  <!-- 메뉴 필터/그리드 전체 래퍼 -->
                   <div class="menu__filter">
-                     <!-- Category radios (CSS only) -->
+                     <!-- 카테고리 필터 라디오 입력들 -->
                      <input
                         type="radio"
                         name="menu-filter"
@@ -231,10 +256,10 @@
                         id="filter-yogurt"
                      />
 
-                     <!-- More toggle (CSS only) -->
+                     <!-- 더보기 토글 체크박스 -->
                      <input type="checkbox" id="menu-more" />
 
-                     <!-- Tabs -->
+                     <!-- 카테고리 탭 UI -->
                      <div
                         class="menu__filter__tabs"
                         role="tablist"
@@ -250,9 +275,9 @@
                         <label for="filter-yogurt" role="tab">Yogurt</label>
                      </div>
 
-                     <!-- Grid (20 items) -->
+                     <!-- 메뉴 카드 그리드 -->
                      <div class="menu__grid">
-                        <!-- Coffee (4) -->
+                        <!-- 메뉴 카드들(카테고리/배지 데이터 포함) -->
                         <article
                            class="menu__card"
                            data-category="coffee"
@@ -276,6 +301,7 @@
                                  <p class="menu__desc">
                                     부드러운 라떼에 겨울 향을 더한 클래식.
                                  </p>
+                                 <p class="menu__price">5,000원</p>
                               </div>
                            </a>
                         </article>
@@ -354,7 +380,6 @@
                            </a>
                         </article>
 
-                        <!-- Ade (3) -->
                         <article
                            class="menu__card"
                            data-category="ade"
@@ -422,7 +447,6 @@
                            </a>
                         </article>
 
-                        <!-- Dessert (3) -->
                         <article
                            class="menu__card"
                            data-category="dessert"
@@ -486,7 +510,6 @@
                            </a>
                         </article>
 
-                        <!-- Salad (3) -->
                         <article
                            class="menu__card"
                            data-category="salad"
@@ -554,7 +577,6 @@
                            </a>
                         </article>
 
-                        <!-- Sandwich (3) -->
                         <article class="menu__card" data-category="sandwich">
                            <a class="menu__card__inner" href="#">
                               <img
@@ -615,7 +637,6 @@
                            </a>
                         </article>
 
-                        <!-- Fruit (2) -->
                         <article class="menu__card" data-category="fruit">
                            <a class="menu__card__inner" href="#">
                               <img
@@ -656,7 +677,6 @@
                            </a>
                         </article>
 
-                        <!-- Yogurt (2) -->
                         <article class="menu__card" data-category="yogurt">
                            <a class="menu__card__inner" href="#">
                               <img
@@ -696,7 +716,7 @@
                         </article>
                      </div>
 
-                     <!-- Actions (All에서만 노출) -->
+                     <!-- 더보기/접기 버튼 영역 -->
                      <div class="menu__actions">
                         <label class="menu__more" for="menu-more">
                            <span class="menu__more__open">더보기</span>
@@ -707,12 +727,632 @@
                </div>
             </section>
 
-            <section class="rewards__teaser"></section>
-            <section class="store__experience"></section>
-            <section class="brand__story"></section>
+            <!-- 섹션4: 리워드 티저(맴버십/등급 구조) -->
+            <section class="rewards__teaser">
+               <!-- 섹션4 콘텐츠 컨테이너 -->
+               <div class="container rewards__inner">
+                  <!-- 섹션4 제목/설명 -->
+                  <header class="rewards__header">
+                     <h2 class="rewards__title">
+                        겨울의 순간이, 혜택이 되는 방식
+                     </h2>
+                     <p class="rewards__sub">
+                        쌓이는 일상에 작은 보상을 더해보세요.
+                     </p>
+                  </header>
+
+                  <!-- 섹션4 카드 그리드 -->
+                  <div class="rewards__grid">
+                     <!-- 카드1: 맴버십 가입 안내 -->
+                     <article
+                        class="rewards__item rewards__item--membership rewards__hint"
+                     >
+                        <h3 class="rewards__item__title">Membership</h3>
+
+                        <p class="rewards__item__desc">
+                           무료 가입으로 시작해, 첫 구매부터 리워드 적립을
+                           경험하세요.
+                        </p>
+
+                        <a href="#" class="rewards__cta">가입하고 시작하기</a>
+
+                        <!-- 맴버십 혜택 힌트 패널 -->
+                        <div class="rewards__hint__panel" aria-hidden="true">
+                           <p class="rewards__hint__title">
+                              가입 시 바로 받는 혜택
+                           </p>
+
+                           <ul class="rewards__hint__list">
+                              <li>
+                                 <strong>Welcome</strong>
+                                 <span>첫 구매 웰컴 무료 쿠폰 제공</span>
+                              </li>
+                              <li>
+                                 <strong>Protection</strong>
+                                 <span>실물 카드 OFF 설정으로 잔액 보호</span>
+                              </li>
+                              <li>
+                                 <strong>Extra</strong>
+                                 <span>스타벅스 카드 결제 시 Extra 1 제공</span>
+                              </li>
+                           </ul>
+
+                           <p class="rewards__hint__footnote">
+                              * 일부 혜택은 조건에 따라 제공됩니다
+                           </p>
+                        </div>
+                     </article>
+
+                     <!-- 카드2: 리워드 등급 안내 -->
+                     <article
+                        class="rewards__item rewards__item--rewards rewards__hint"
+                     >
+                        <h3 class="rewards__item__title">Rewards</h3>
+
+                        <p class="rewards__item__desc">
+                           별 적립으로 등급이 올라갈수록 혜택도 커집니다. 무료
+                           음료부터 푸드·MD 바우처까지, 일상의 선택이 더 큰
+                           보상으로 이어집니다.
+                        </p>
+
+                        <!-- 등급 진행 라인 -->
+                        <div class="rewards__progress" aria-hidden="true">
+                           <span class="rewards__step is-active">
+                              <span class="rewards__dot"></span>
+                              <span class="rewards__label">Welcome</span>
+                           </span>
+
+                           <span class="rewards__step is-done">
+                              <span class="rewards__dot"></span>
+                              <span class="rewards__label">Green</span>
+                           </span>
+
+                           <span class="rewards__step is-done">
+                              <span class="rewards__dot"></span>
+                              <span class="rewards__label">Gold</span>
+                           </span>
+                        </div>
+
+                        <a href="#" class="rewards__cta">혜택 자세히 보기</a>
+
+                        <!-- 등급 혜택 힌트 패널 -->
+                        <div class="rewards__hint__panel" aria-hidden="true">
+                           <p class="rewards__hint__title">등급 힌트</p>
+
+                           <ul class="rewards__hint__list">
+                              <li>
+                                 <strong>Welcome</strong>
+                                 <span
+                                    >첫 구매 웰컴 쿠폰 · 카드 분실 보호 · Extra
+                                    혜택</span
+                                 >
+                              </li>
+                              <li>
+                                 <strong>Green</strong>
+                                 <span
+                                    >생일 쿠폰 · 사이즈업 · 음료/커피 교환</span
+                                 >
+                              </li>
+                              <li>
+                                 <strong>Gold</strong>
+                                 <span
+                                    >전용 카드 · 제조음료/푸드/MD 바우처
+                                    교환</span
+                                 >
+                              </li>
+                           </ul>
+
+                           <p class="rewards__hint__footnote">
+                              * 상세 조건/수량은 “자세히 보기”에서 확인
+                           </p>
+                        </div>
+                     </article>
+                  </div>
+               </div>
+            </section>
+
+            <!-- 섹션5: 매장 경험(이미지 배경 + 우측 패널) -->
+            <section class="store__experience" aria-label="Store experience">
+               <!-- 섹션5 배경 이미지 영역 -->
+               <div class="store__media" aria-hidden="true"></div>
+
+               <!-- 섹션5 우측 정보 패널 -->
+               <div
+                  class="store__panel"
+                  role="region"
+                  aria-label="Store experience content"
+               >
+                  <div class="store__panel__inner">
+                     <!-- 섹션5 텍스트 영역 -->
+                     <header class="store__header">
+                        <h2 class="store__title">
+                           머무는 순간까지,<br />
+                           하나의 경험이 됩니다
+                        </h2>
+
+                        <p class="store__desc">
+                           누군가는 일을 하고,<br />
+                           누군가는 이야기를 나누고,<br />
+                           누군가는 잠시 쉬어갑니다.
+                        </p>
+
+                        <p class="store__desc store__desc--sub">
+                           스타벅스의 매장은 커피를 마시는 공간을 넘어,<br />
+                           각자의 시간이 자연스럽게 이어지는 장소입니다.
+                        </p>
+                     </header>
+
+                     <!-- 섹션5 매장 선택 영역 -->
+                     <div class="store__finder" aria-label="Find a store">
+                        <label class="store__label" for="store-area"
+                           >지역 선택</label
+                        >
+                        <select
+                           class="store__select"
+                           id="store-area"
+                           name="store-area"
+                        >
+                           <option value="ilsan" selected>일산</option>
+                           <option value="all">전체</option>
+                        </select>
+
+                        <label class="store__label" for="store-branch"
+                           >일산 매장</label
+                        >
+                        <select
+                           class="store__select"
+                           id="store-branch"
+                           name="store-branch"
+                        >
+                           <!-- 스크립트로 옵션 채움 -->
+                        </select>
+
+                        <div class="store__results" aria-label="Store list">
+                           <p class="store__results__title">추천 매장</p>
+                           <ul class="store__list" id="store-list">
+                              <!-- 스크립트로 목록 채움 -->
+                           </ul>
+                        </div>
+
+                        <a
+                           class="store__cta"
+                           href="#"
+                           aria-label="가까운 매장 찾기"
+                        >
+                           가까운 매장 찾기
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </section>
+
+            <!-- 섹션 06: 브랜드 스토리(이미지 + 탭 + 지표 카드) -->
+            <section
+               class="brand__story"
+               aria-label="Brand story and sustainability"
+            >
+               <div class="container brand__inner">
+                  <!-- 섹션 헤더 -->
+                  <header class="brand__head">
+                     <h2 class="brand__title">Brand Story</h2>
+                     <p class="brand__sub">
+                        커피의 시작부터 지속가능한 선택까지, 브랜드가 지켜온
+                        기준을 한눈에.
+                     </p>
+                  </header>
+
+                  <!-- 탭(라디오) -->
+                  <div
+                     class="brand__tabs"
+                     role="tablist"
+                     aria-label="Brand story tabs"
+                  >
+                     <!-- controls (hidden) -->
+                     <input
+                        type="radio"
+                        name="brand-tab"
+                        id="tab-coffee"
+                        checked
+                     />
+                     <input type="radio" name="brand-tab" id="tab-sourcing" />
+                     <input type="radio" name="brand-tab" id="tab-sustain" />
+                     <input type="radio" name="brand-tab" id="tab-community" />
+
+                     <!-- tab buttons -->
+                     <div class="brand__tabbar">
+                        <label
+                           for="tab-coffee"
+                           role="tab"
+                           aria-controls="panel-coffee"
+                           >Coffee</label
+                        >
+                        <label
+                           for="tab-sourcing"
+                           role="tab"
+                           aria-controls="panel-sourcing"
+                           >Sourcing</label
+                        >
+                        <label
+                           for="tab-sustain"
+                           role="tab"
+                           aria-controls="panel-sustain"
+                           >Sustainability</label
+                        >
+                        <label
+                           for="tab-community"
+                           role="tab"
+                           aria-controls="panel-community"
+                           >Community</label
+                        >
+                     </div>
+
+                     <!-- panels -->
+                     <div class="brand__panels">
+                        <!-- PANEL 1 -->
+                        <article
+                           class="brand__panel"
+                           id="panel-coffee"
+                           role="tabpanel"
+                           tabindex="0"
+                        >
+                           <div class="zigzag">
+                              <!-- 지그재그 1 -->
+                              <div class="zigzag__row">
+                                 <div class="zigzag__media" aria-hidden="true">
+                                    <img
+                                       src="./assets/img/section__6/tab_coffee_01.png"
+                                       alt=""
+                                       loading="lazy"
+                                       decoding="async"
+                                    />
+                                 </div>
+
+                                 <div class="zigzag__content">
+                                    <p class="zigzag__eyebrow">Coffee</p>
+                                    <h3 class="zigzag__title">
+                                       좋은 커피는 디테일에서 완성됩니다
+                                    </h3>
+                                    <p class="zigzag__desc">
+                                       산지의 개성과 로스팅의 균형, 그리고 한
+                                       잔이 나오기까지의 기준. 맛의 ‘완성도’를
+                                       흔들지 않기 위해 과정 전체를 설계합니다.
+                                    </p>
+
+                                    <ul
+                                       class="mini__cards"
+                                       aria-label="Coffee key points"
+                                    >
+                                       <li class="mini__card">
+                                          <strong>Quality</strong>
+                                          <span>원두의 기준과 맛의 일관성</span>
+                                       </li>
+                                       <li class="mini__card">
+                                          <strong>Roast</strong>
+                                          <span>향·바디감·밸런스 최적화</span>
+                                       </li>
+                                       <li class="mini__card">
+                                          <strong>Craft</strong>
+                                          <span>추출·온도·레시피 관리</span>
+                                       </li>
+                                    </ul>
+                                 </div>
+                              </div>
+
+                              <!-- 중간 한줄 카피 -->
+                              <p class="zigzag__line coffee__bg">
+                                 기준이 쌓일수록, 한 잔은 더 믿을 수 있는 경험이
+                                 됩니다.
+                              </p>
+
+                              <!-- 지그재그 2 (반대) -->
+                              <div class="zigzag__row zigzag__row--reverse">
+                                 <div class="zigzag__media" aria-hidden="true">
+                                    <img
+                                       src="./assets/img/section__6/tab_coffee_02.png"
+                                       alt=""
+                                       loading="lazy"
+                                       decoding="async"
+                                    />
+                                 </div>
+
+                                 <div class="zigzag__content">
+                                    <p class="zigzag__eyebrow">Coffee</p>
+                                    <h3 class="zigzag__title">
+                                       오늘의 선택이 내일의 취향이 되도록
+                                    </h3>
+                                    <p class="zigzag__desc">
+                                       처음 마시는 사람에게는 쉽고, 자주 마시는
+                                       사람에게는 깊게. 취향의 폭을 넓히는
+                                       구조로 메뉴와 경험을 설계합니다.
+                                    </p>
+
+                                    <a
+                                       class="brand__link"
+                                       href="#"
+                                       aria-label="브랜드 소개 보기"
+                                    >
+                                       브랜드 소개 보기
+                                    </a>
+                                 </div>
+                              </div>
+                           </div>
+                        </article>
+
+                        <!-- PANEL 2 -->
+                        <article
+                           class="brand__panel"
+                           id="panel-sourcing"
+                           role="tabpanel"
+                           tabindex="0"
+                        >
+                           <div class="zigzag">
+                              <div class="zigzag__row">
+                                 <div class="zigzag__media" aria-hidden="true">
+                                    <img
+                                       src="./assets/img/section__6/tab_sourcing_01.png"
+                                       alt=""
+                                       loading="lazy"
+                                       decoding="async"
+                                    />
+                                 </div>
+
+                                 <div class="zigzag__content">
+                                    <p class="zigzag__eyebrow">Sourcing</p>
+                                    <h3 class="zigzag__title">
+                                       커피의 시작은 산지에서 결정됩니다
+                                    </h3>
+                                    <p class="zigzag__desc">
+                                       원두는 ‘원가’가 아니라 ‘관계’로
+                                       관리됩니다. 생산자와의 파트너십을 통해
+                                       품질과 지속가능성을 함께 높입니다.
+                                    </p>
+
+                                    <ul
+                                       class="mini__cards"
+                                       aria-label="Sourcing key points"
+                                    >
+                                       <li class="mini__card">
+                                          <strong>Responsibility</strong>
+                                          <span>윤리적 기준과 투명성</span>
+                                       </li>
+                                       <li class="mini__card">
+                                          <strong>Farmers</strong>
+                                          <span>장기 파트너십 기반 지원</span>
+                                       </li>
+                                       <li class="mini__card">
+                                          <strong>Trace</strong>
+                                          <span>원산지·품질 프로세스 관리</span>
+                                       </li>
+                                    </ul>
+                                 </div>
+                              </div>
+
+                              <p class="zigzag__line sourcing__bg">
+                                 한 잔의 신뢰는, 보이지 않는 과정의 정직함에서
+                                 시작됩니다.
+                              </p>
+
+                              <div class="zigzag__row zigzag__row--reverse">
+                                 <div class="zigzag__media" aria-hidden="true">
+                                    <img
+                                       src="./assets/img/section__6/tab_sourcing_02.png"
+                                       alt=""
+                                       loading="lazy"
+                                       decoding="async"
+                                    />
+                                 </div>
+
+                                 <div class="zigzag__content">
+                                    <p class="zigzag__eyebrow">Sourcing</p>
+                                    <h3 class="zigzag__title">
+                                       지속되는 품질을 위한 공급망 설계
+                                    </h3>
+                                    <p class="zigzag__desc">
+                                       수확·가공·운송·보관까지, 품질이 흔들릴
+                                       지점을 미리 정의하고 표준을 적용해
+                                       ‘일관된 맛’을 유지합니다.
+                                    </p>
+
+                                    <a
+                                       class="brand__link"
+                                       href="#"
+                                       aria-label="브랜드 소개 보기"
+                                    >
+                                       브랜드 소개 보기
+                                    </a>
+                                 </div>
+                              </div>
+                           </div>
+                        </article>
+
+                        <!-- PANEL 3 -->
+                        <article
+                           class="brand__panel"
+                           id="panel-sustain"
+                           role="tabpanel"
+                           tabindex="0"
+                        >
+                           <div class="zigzag">
+                              <div class="zigzag__row">
+                                 <div class="zigzag__media" aria-hidden="true">
+                                    <img
+                                       src="./assets/img/section__6/tab_sustain_01.png"
+                                       alt=""
+                                       loading="lazy"
+                                       decoding="async"
+                                    />
+                                 </div>
+
+                                 <div class="zigzag__content">
+                                    <p class="zigzag__eyebrow">
+                                       Sustainability
+                                    </p>
+                                    <h3 class="zigzag__title">
+                                       지속가능성은 선택이 아니라 기준입니다
+                                    </h3>
+                                    <p class="zigzag__desc">
+                                       환경을 위한 행동은 거창할 필요가
+                                       없습니다. 매일의 운영과 제품 경험에서
+                                       ‘낭비를 줄이는 선택’을 기본값으로 둡니다.
+                                    </p>
+
+                                    <ul
+                                       class="mini__cards"
+                                       aria-label="Sustainability key points"
+                                    >
+                                       <li class="mini__card">
+                                          <strong>Reuse</strong>
+                                          <span>다회용·리유즈 선택 확장</span>
+                                       </li>
+                                       <li class="mini__card">
+                                          <strong>Waste</strong>
+                                          <span>불필요한 자원 사용 최소화</span>
+                                       </li>
+                                       <li class="mini__card">
+                                          <strong>Better</strong>
+                                          <span>기준 개선을 반복 적용</span>
+                                       </li>
+                                    </ul>
+                                 </div>
+                              </div>
+
+                              <p class="zigzag__line sustain__bg">
+                                 작은 실천이 쌓이면, 브랜드의 태도가 됩니다.
+                              </p>
+
+                              <div class="zigzag__row zigzag__row--reverse">
+                                 <div class="zigzag__media" aria-hidden="true">
+                                    <img
+                                       src="./assets/img/section__6/tab_sustain_02.png"
+                                       alt=""
+                                       loading="lazy"
+                                       decoding="async"
+                                    />
+                                 </div>
+
+                                 <div class="zigzag__content">
+                                    <p class="zigzag__eyebrow">
+                                       Sustainability
+                                    </p>
+                                    <h3 class="zigzag__title">
+                                       일상의 편리함을 해치지 않는 방식으로
+                                    </h3>
+                                    <p class="zigzag__desc">
+                                       사용자 경험을 유지하면서도 환경 부담을
+                                       줄이는 균형. 운영·패키징·동선까지
+                                       “불편하지 않은 지속가능성”을 목표로
+                                       합니다.
+                                    </p>
+
+                                    <a
+                                       class="brand__link"
+                                       href="#"
+                                       aria-label="브랜드 소개 보기"
+                                    >
+                                       브랜드 소개 보기
+                                    </a>
+                                 </div>
+                              </div>
+                           </div>
+                        </article>
+
+                        <!-- PANEL 4 -->
+                        <article
+                           class="brand__panel"
+                           id="panel-community"
+                           role="tabpanel"
+                           tabindex="0"
+                        >
+                           <div class="zigzag">
+                              <div class="zigzag__row">
+                                 <div class="zigzag__media" aria-hidden="true">
+                                    <img
+                                       src="./assets/img/section__6/tab_community_01.png"
+                                       alt=""
+                                       loading="lazy"
+                                       decoding="async"
+                                    />
+                                 </div>
+
+                                 <div class="zigzag__content">
+                                    <p class="zigzag__eyebrow">Community</p>
+                                    <h3 class="zigzag__title">
+                                       매장은 관계가 만들어지는 생활 공간입니다
+                                    </h3>
+                                    <p class="zigzag__desc">
+                                       커피를 마시는 시간은 사람을 연결합니다.
+                                       매장은 그 연결이 편안하게 이어지도록
+                                       ‘머무름’ 중심으로 설계됩니다.
+                                    </p>
+
+                                    <ul
+                                       class="mini__cards"
+                                       aria-label="Community key points"
+                                    >
+                                       <li class="mini__card">
+                                          <strong>Local</strong>
+                                          <span>지역과 함께 성장하는 운영</span>
+                                       </li>
+                                       <li class="mini__card">
+                                          <strong>Partners</strong>
+                                          <span
+                                             >파트너의 경험이 서비스가 됨</span
+                                          >
+                                       </li>
+                                       <li class="mini__card">
+                                          <strong>Impact</strong>
+                                          <span>긍정적 변화를 만드는 활동</span>
+                                       </li>
+                                    </ul>
+                                 </div>
+                              </div>
+
+                              <p class="zigzag__line community__bg">
+                                 커피는 매개이고, 경험은 사람들이 완성합니다.
+                              </p>
+
+                              <div class="zigzag__row zigzag__row--reverse">
+                                 <div class="zigzag__media" aria-hidden="true">
+                                    <img
+                                       src="./assets/img/section__6/tab_community_02.png"
+                                       alt=""
+                                       loading="lazy"
+                                       decoding="async"
+                                    />
+                                 </div>
+
+                                 <div class="zigzag__content">
+                                    <p class="zigzag__eyebrow">Community</p>
+                                    <h3 class="zigzag__title">
+                                       일상에 스며드는 브랜드의 역할
+                                    </h3>
+                                    <p class="zigzag__desc">
+                                       특별한 이벤트가 아니라 매일의 장면 속에서
+                                       브랜드가 어떤 태도로 존재하는지 보여주는
+                                       구간입니다.
+                                    </p>
+
+                                    <a
+                                       class="brand__link"
+                                       href="#"
+                                       aria-label="브랜드 소개 보기"
+                                    >
+                                       브랜드 소개 보기
+                                    </a>
+                                 </div>
+                              </div>
+                           </div>
+                        </article>
+                     </div>
+                  </div>
+               </div>
+            </section>
+
+            <!-- 섹션7: 마지막 전환 CTA(준비 중) -->
             <section class="final__cta"></section>
          </main>
-         <!-- 푸터 -->
+
+         <!-- 하단 푸터 영역 -->
          <footer class="site__footer">
             <p class="footer__copyright">
                © 2026 Shin Jaejun. All rights reserved.
@@ -724,5 +1364,8 @@
             </p>
          </footer>
       </div>
+
+      <!-- 섹션5 매장 선택 인터랙션 스크립트 -->
+      <script src="./js/script.js"></script>
    </body>
 </html>
