@@ -430,6 +430,65 @@ button {
    filter: blur(4px);
 }
 
+.featured__animation {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   pointer-events: none;
+   overflow: hidden;
+}
+
+.featured__img img {
+   width: auto;
+   height: 350px;
+   display: block;
+   object-fit: cover;
+
+   transform-origin: center center;
+   animation: santaBreath 4.2s ease-in-out infinite;
+}
+
+.featured__img {
+   will-change: transform;
+   animation: santaWave 7.5s ease-in-out infinite;
+}
+
+@keyframes santaWave {
+   0% {
+      transform: translate(0, 0) rotate(0deg);
+   }
+
+   20% {
+      transform: translate(10px, -6px) rotate(-0.8deg);
+   }
+
+   40% {
+      transform: translate(0px, -12px) rotate(0.6deg);
+   }
+
+   60% {
+      transform: translate(-10px, -6px) rotate(-0.6deg);
+   }
+
+   80% {
+      transform: translate(0px, 4px) rotate(0.8deg);
+   }
+
+   100% {
+      transform: translate(0, 0) rotate(0deg);
+   }
+}
+@keyframes santaBreath {
+   0%,
+   100% {
+      transform: scale(1);
+   }
+   50% {
+      transform: scale(1.02);
+   }
+}
+
 /* 섹션2 태블릿 대응 */
 @media (max-width: 1024px) {
    .featured__list ul {
@@ -459,6 +518,9 @@ button {
       left: -14px;
       width: 56px;
       height: 56px;
+   }
+   .featured__img img {
+      width: 500px;
    }
 }
 
