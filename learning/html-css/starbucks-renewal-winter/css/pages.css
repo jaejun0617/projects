@@ -48,25 +48,10 @@
 /* =========================================================
    MENU PAGE (menu.html)
    ========================================================= */
-
-/* Menu 페이지: 카테고리 필터 상단 고정 */
-.page-menu .menu__filter__tabs {
-   position: sticky;
-   top: var(--header-h);
-   z-index: 100;
-   background: var(--bg-0);
-   padding-block: 1rem;
-   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-/* Menu 페이지: 그리드 간격 확대 */
-.page-menu .menu__grid {
-   gap: clamp(16px, 2vw, 24px);
-}
-
-/* Menu 페이지: 카드 호버 강화 */
-.page-menu .menu__card__inner:hover {
-   transform: translateY(-12px) scale(1.02);
+.menu__hero {
+   width: 100%;
+   height: 100svh;
+   background: url(../assets/img/Hero/hero__bg__03.png) center / cover no-repeat;
 }
 
 /* =========================================================
