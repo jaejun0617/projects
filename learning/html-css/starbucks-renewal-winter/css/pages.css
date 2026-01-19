@@ -63,29 +63,245 @@
    background: linear-gradient(to bottom, var(--brand-100), var(--bg-0));
 }
 
-/* Rewards 페이지: 힌트 패널 항상 표시 */
-.page-rewards .rewards__hint__panel {
-   position: static;
-   opacity: 1;
-   transform: none;
-   filter: none;
-   pointer-events: auto;
-   margin-top: 1rem;
+/* =========================================================
+   Rewards Page
+   ========================================================= */
+
+/* Root */
+.rewards {
+   width: 100%;
+   background-color: #fbfbfc;
 }
 
-/* Rewards 페이지: 진행 바 강조 */
-.page-rewards .rewards__progress {
-   padding: 1rem;
-   background: rgba(255, 255, 255, 0.1);
-   border-radius: var(--radius-sm);
+/* =========================================================
+   Rewards Hero
+   ========================================================= */
+
+/* =========================================================
+   Rewards Hero
+========================================================= */
+
+.rewards__hero {
+   position: relative;
+   min-height: calc(100svh - 72px);
+   overflow: hidden;
+}
+
+.rewards__hero__bg {
+   position: absolute;
+   inset: 0;
+   background: url('../assets/pages/reward/reward__bg.png') center / cover;
+   animation: rewardsHeroZoom 14s cubic-bezier(0.16, 1, 0.3, 1) infinite
+      alternate;
+}
+
+.rewards__hero__bg::after {
+   content: '';
+   position: absolute;
+   inset: 0;
+   background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.75)
+   );
+}
+
+@keyframes rewardsHeroZoom {
+   from {
+      transform: scale(1.05);
+   }
+   to {
+      transform: scale(1.15);
+   }
+}
+
+.rewards__hero__inner {
+   position: relative;
+   z-index: 1;
+   min-height: calc(100svh - 72px);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.rewards__hero__content {
+   max-width: 720px;
+   padding: 0 24px;
+   text-align: center;
+   color: #ffffff;
+}
+
+.rewards__hero__content h1 {
+   font-size: 2.6rem;
+   font-weight: 700;
+   margin-bottom: 1.5rem;
+}
+
+.rewards__hero__content p {
+   font-size: 1.05rem;
+   line-height: 1.7;
+   opacity: 0.9;
+}
+
+/* =========================================================
+   Rewards Intro
+========================================================= */
+
+.rewards__intro {
+   padding: 7rem 0;
+   background: linear-gradient(180deg, #ffffff 0%, #f2f4f7 100%);
+}
+
+.rewards__intro__header,
+.rewards__tiers__header {
+   text-align: center;
+   margin-bottom: 5rem;
+}
+
+.rewards__intro__title,
+.rewards__tiers__title {
+   font-size: 2.1rem;
+   font-weight: 700;
+   margin-bottom: 1rem;
+}
+
+.rewards__intro__desc,
+.rewards__tiers__desc {
+   color: #4b5563;
+}
+
+.rewards__intro__grid {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 3rem;
+}
+
+.rewards__intro__item {
+   position: relative;
+   padding: 3.5rem 2.5rem;
+   border-radius: 24px;
+   text-align: center;
+   box-shadow: 0 24px 50px rgba(0, 0, 0, 0.08);
+   transition: transform 0.3s ease;
+}
+
+.rewards__intro__item:hover {
+   transform: translateY(-6px);
+}
+
+.rewards__intro__step {
+   position: absolute;
+   top: -18px;
+   left: 50%;
+   transform: translateX(-50%);
+   font-size: 0.85rem;
+   font-weight: 700;
+   padding: 6px 14px;
+   border-radius: 999px;
+   background: #111318;
+   color: #ffffff;
+}
+
+/* Intro Color Mapping */
+.rewards__intro__item:nth-child(1) {
+   background: linear-gradient(180deg, #fff5f7 0%, #ffffff 70%);
+}
+.rewards__intro__item:nth-child(2) {
+   background: linear-gradient(180deg, #d9f3e5 0%, #ffffff 70%);
+}
+.rewards__intro__item:nth-child(3) {
+   background: linear-gradient(180deg, #fff4d6 0%, #ffffff 70%);
+}
+
+/* =========================================================
+   Rewards Tiers
+========================================================= */
+
+.rewards__tiers {
+   padding: 6.5rem 0;
+   background: #f2f4f7;
+}
+
+.rewards__tiers__list {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 3rem;
+}
+
+.rewards__tiers__item {
+   padding: 3rem 2.5rem;
+   border-radius: 20px;
+   text-align: center;
+   background: #ffffff;
+   box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+}
+
+/* Tier Gradients */
+.rewards__tiers__item:nth-child(1) {
+   background: linear-gradient(180deg, #ffe4ec 0%, #ffffff 75%);
+}
+.rewards__tiers__item:nth-child(2) {
+   background: linear-gradient(180deg, #d9f3e5 0%, #ffffff 75%);
+}
+.rewards__tiers__item:nth-child(3) {
+   background: linear-gradient(180deg, #fff2cc 0%, #ffffff 70%);
+}
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.rewards__cta {
+   padding: 7rem 0;
+   text-align: center;
+   background: linear-gradient(180deg, #ffffff 0%, #f2f4f7 100%);
+   line-height: 3;
+}
+
+.rewards__cta__button {
+   padding: 1rem 2rem;
+   border-radius: 999px;
+   background: #0b6b3a;
+   color: #ffffff;
+   font-weight: 600;
+
+   box-shadow: 0 18px 40px rgba(11, 107, 58, 0.4);
+}
+
+/* =========================================================
+   Responsive
+========================================================= */
+
+@media (max-width: 1024px) {
+   .rewards__intro__grid,
+   .rewards__tiers__list {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+   }
+
+   .rewards__hero__content h1 {
+      font-size: 2.2rem;
+   }
+}
+
+@media (max-width: 640px) {
+   .rewards__hero__content h1 {
+      font-size: 1.9rem;
+   }
+   .rewards__cta__title,
+   .rewards__cta__desc {
+      display: none;
+   }
+   .rewards__cta {
+      padding: 0;
+      text-align: center;
+
+      line-height: 2;
+   }
 }
 
 /* =========================================================
    BRAND PAGE (brand.html)
-   ========================================================= */
-
-/* =========================================================
-   Brand Hero
    ========================================================= */
 
 .brand-hero {
