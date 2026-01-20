@@ -1,4 +1,4 @@
-## 🧱 HTML / CSS 학습 기준
+## 🧱 HTML / CSS / JS 학습 
 
 ### Box Model & Positioning
 - Margin / Padding / Border / Box-sizing 이해
@@ -50,6 +50,42 @@
 
 ---
 
+## ⚙️ JavaScript Core (Day 15)
+
+### Variables & State
+- `const`와 `let`을 역할 기준으로 분리
+  - `const`: 변하지 않는 데이터 소스 (profiles)
+  - `let`: UI 상태(state)
+- 데이터와 상태를 구분하여 **예측 가능한 UI 흐름** 설계
+
+### Data Types & UI Mapping
+- String / Number / Boolean / Array 타입을 UI 표현 기준으로 사용
+- Boolean → Badge UI
+- Array → 리스트 / `join()` 출력
+- 빈 값에 대한 예외 처리 설계
+
+### Template Literals
+- 문자열 결합이 아닌 **UI 구조 생성 도구**로 활용
+- HTML 마크업을 JS에서 동적으로 생성
+- 데이터 → 화면 변환 흐름 이해
+
+### Type Guard & Validation
+- `typeof` 기반 런타임 타입 검증
+- 렌더링 전 `validateProfile()`로 데이터 안전성 확보
+- 잘못된 데이터는 UI 렌더링을 중단하고 에러 표시
+
+### State → Render 패턴
+- 상태 변경은 이벤트에서만 수행
+- DOM 수정은 `render()` 함수 한 곳에서만 처리
+- `state 변경 → render()` 구조를 통해 React 사고 방식의 기초 체득
+
+### UI 예외 케이스 처리
+- 배열 길이 0일 때 “없음” 처리
+- 잘못된 타입일 경우 카드 렌더링 차단
+- 사용자에게 에러를 명확히 보여주는 UI 설계
+
+---
+
 ## 🛠 Tech Stack
 
 - **HTML5**
@@ -58,4 +94,9 @@
   - Advanced Selectors & Pseudo
   - CSS Variables
   - Modern CSS Features
-  - SCSS 
+  - SCSS
+- **JavaScript (ES6+)**
+  - Variables & Data Types
+  - Template Literals
+  - Type Guard (`typeof`, `Array.isArray`)
+  - State-based Rendering Pattern
