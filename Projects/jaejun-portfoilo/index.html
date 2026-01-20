@@ -15,20 +15,50 @@
    </head>
    <body>
       <header class="site__header">
-         <!-- 네비게이션 / 로고 / GitHub 링크 -->
          <div class="container">
             <nav class="site__nav">
-               <div class="site__logo">
-                  <img src="" alt="재준 이모지" />
+               <div class="site__links">
+                  <div class="site__logo">
+                     <img
+                        src="./assets/icon/emoji-profile.png"
+                        alt="개발자 이모지"
+                     />
+                  </div>
+                  <div class="site__git">
+                     <a href="https://github.com/jaejun0617" target="_blank">
+                        <img
+                           src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
+                           alt="github icon"
+                        />
+                     </a>
+                  </div>
                </div>
+
                <div class="site__menu">
                   <ul class="site__menu--list">
-                     <li><a href="#" data-target="hero">홈</a></li>
-                     <li><a href="#" data-target="profile">About</a></li>
-                     <li><a href="#" data-target="skills">Skills</a></li>
-                     <li><a href="#" data-target="projects">Projects</a></li>
-                     <li><a href="#" data-target="contact">Contact</a></li>
+                     <li><a href="#profile">About</a></li>
+                     <li><a href="#skills">Skills</a></li>
+                     <li><a href="#projects">Projects</a></li>
+                     <li><a href="#contact">Contact</a></li>
                   </ul>
+               </div>
+
+               <div class="site__dark__mode">
+                  <button
+                     class="theme-toggle"
+                     id="themeToggle"
+                     aria-label="다크모드 토글"
+                  >
+                     <span class="theme-toggle__circle">
+                        <span class="theme-toggle__icon theme-toggle__icon--sun"
+                           >☀️</span
+                        >
+                        <span
+                           class="theme-toggle__icon theme-toggle__icon--moon"
+                           >🌙</span
+                        >
+                     </span>
+                  </button>
                </div>
             </nav>
          </div>
@@ -40,7 +70,112 @@
          </section>
 
          <section id="profile" class="profile" aria-label="Profile">
-            <!-- 나의 정보 카드 -->
+            <div class="profile__container">
+               <div class="profile__header__title">
+                  <h2>ABOUT ME</h2>
+               </div>
+               <div class="profile__content">
+                  <!-- Profile Card (JavaScript로 렌더링) -->
+                  <div class="profile__card"></div>
+
+                  <!-- Journey Info -->
+                  <article class="my__info">
+                     <div class="about-journey">
+                        <div
+                           class="journey-item"
+                           data-animation="fade-in-right"
+                           style="transition-delay: 0.1s"
+                        >
+                           <div class="journey-phase">
+                              <span class="dot red"></span>
+                              <p>Phase 1: The Spark (호기심의 시작)</p>
+                           </div>
+                           <h4>
+                              아이디어를 <strong>현실로 구현하는</strong> 즐거움
+                           </h4>
+                           <p>
+                              '이건 어떻게 만들었을까?'라는 순수한 호기심으로
+                              열어본 개발자 도구가 모든 것의 시작이었습니다.
+                              눈에 보이는 디자인이
+                              <strong>논리적인 코드로 구현</strong>되는 과정을
+                              통해 프론트엔드 개발의 매력에 빠져들었습니다.
+                           </p>
+                        </div>
+
+                        <div
+                           class="journey-item"
+                           data-animation="fade-in-right"
+                           style="transition-delay: 0.2s"
+                        >
+                           <div class="journey-phase">
+                              <span class="dot yellow"></span>
+                              <p>Phase 2: The Bridge (사용자와의 연결)</p>
+                           </div>
+                           <h4>
+                              기술을 넘어, <strong>사용자를 향한 다리</strong>를
+                              놓다
+                           </h4>
+                           <p>
+                              기술보다 중요한 것은 사용하는 사람이라는 사실을
+                              깨달았습니다. 복잡한 기술과 사용자 사이를 잇는
+                              <strong>직관적인 UI/UX</strong>를 고민합니다.
+                           </p>
+                        </div>
+
+                        <div
+                           class="journey-item"
+                           data-animation="fade-in-right"
+                           style="transition-delay: 0.3s"
+                        >
+                           <div class="journey-phase">
+                              <span class="dot green"></span>
+                              <p>Phase 3: The Growth (어제와 오늘의 연결)</p>
+                           </div>
+                           <h4>배움을 <strong>성장으로 잇는 꾸준함</strong></h4>
+                           <p>
+                              작은 문제 해결과 기록을 반복하며 어제의 실패를
+                              오늘의 성장으로 연결합니다.
+                              <strong>꾸준함</strong>은 저의 가장 강력한
+                              무기입니다.
+                           </p>
+                        </div>
+
+                        <div
+                           class="journey-item"
+                           data-animation="fade-in-right"
+                           style="transition-delay: 0.4s"
+                        >
+                           <div class="journey-phase">
+                              <span class="dot blue"></span>
+                              <p>Phase 4: The Commitment (책임감과의 연결)</p>
+                           </div>
+                           <h4>코드에 담는 <strong>책임감</strong></h4>
+                           <p>
+                              왜 이렇게 작성했는지 설명할 수 있는 코드를
+                              지향합니다. <strong>정직한 코드</strong>와 결과에
+                              대한 책임으로 프로젝트에 임합니다.
+                           </p>
+                        </div>
+
+                        <div
+                           class="journey-item"
+                           data-animation="fade-in-right"
+                           style="transition-delay: 0.5s"
+                        >
+                           <div class="journey-phase">
+                              <span class="dot purple"></span>
+                              <p>Phase 5: The Next Chapter (동료와의 연결)</p>
+                           </div>
+                           <h4><strong>함께 완성해갈</strong> 다음 장</h4>
+                           <p>
+                              겸손한 자세로 배우고, 팀과 연결되어 더 큰 시너지를
+                              만들고 싶습니다.
+                           </p>
+                        </div>
+                     </div>
+                  </article>
+               </div>
+            </div>
          </section>
 
          <section id="skills" class="skills" aria-label="Skills">
@@ -59,6 +194,6 @@
       <footer class="site__footer">
          <!-- 연락처 / 소셜 / 저작권 -->
       </footer>
-      <!-- <script src="./js/main.js"></script> -->
+      <script src="./js/main.js"></script>
    </body>
 </html>

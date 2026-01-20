@@ -1,24 +1,622 @@
+/* mobile first */
+
+/* =========================
+   Global Layout Rules
+   공통 레이아웃 기본 규칙
+   ========================= */
+
+section {
+   min-height: 100svh;
+}
+
+.profile,
+.skills,
+.projects,
+.contact {
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+}
+
+/* =========================
+      App Root Layout
+      ========================= */
+
 #app {
    min-height: 100svh;
-   /* border: 1px solid red; */
+   background-color: var(--c-bg);
+   transition: background-color var(--dur-base) var(--ease-base);
 }
+
+/* =========================
+      Header Layout
+      사이트 상단 영역
+      ========================= */
+
+.site__header {
+   position: sticky;
+   top: 0;
+   width: 100%;
+   height: var(--header-h);
+   background-color: var(--c-surface);
+   border-bottom: 1px solid var(--c-border);
+   z-index: var(--z-header);
+   transition:
+      background-color var(--dur-base) var(--ease-base),
+      border-color var(--dur-base) var(--ease-base);
+}
+
+.container {
+   max-width: var(--container-max);
+   margin: 0 auto;
+   padding: 0 var(--gutter);
+}
+
+.site__nav {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   height: var(--header-h);
+   gap: var(--sp-24);
+}
+
+/* Logo & GitHub */
+.site__links {
+   display: flex;
+   align-items: center;
+   gap: var(--sp-16);
+}
+
+.site__logo img {
+   width: 40px;
+   height: 40px;
+   border-radius: 50%;
+   object-fit: cover;
+}
+
+.site__git a {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 36px;
+   height: 36px;
+   border-radius: var(--r-sm);
+   transition: background-color var(--dur-fast) var(--ease-base);
+}
+
+.site__git a:hover {
+   background-color: var(--c-hover-bg);
+}
+
+.site__git img {
+   width: 24px;
+   height: 24px;
+   filter: var(--img-filter, none);
+   transition: filter var(--dur-base) var(--ease-base);
+}
+
+/* Dark mode에서 아이콘 색상 반전 */
+[data-theme='dark'] .site__git img {
+   filter: invert(1);
+}
+
+/* Menu */
+.site__menu--list {
+   display: none;
+   gap: var(--sp-8);
+}
+
+.site__menu--list li a {
+   display: block;
+   padding: var(--sp-8) var(--sp-16);
+   font-size: var(--fz-14);
+   font-weight: var(--fw-medium);
+   color: var(--c-text);
+   border-radius: var(--r-sm);
+   transition:
+      background-color var(--dur-fast) var(--ease-base),
+      color var(--dur-base) var(--ease-base);
+}
+
+.site__menu--list li a:hover {
+   background-color: var(--c-hover-bg);
+}
+
+/* ======================================================
+      Dark Mode Toggle Button
+      ====================================================== */
+.site__dark__mode {
+   display: flex;
+   align-items: center;
+}
+
+.theme-toggle {
+   position: relative;
+   width: 64px;
+   height: 32px;
+   background: var(--c-border);
+   border: none;
+   border-radius: 999px;
+   cursor: pointer;
+   transition: background-color var(--dur-base) var(--ease-base);
+   padding: 0;
+   overflow: hidden;
+}
+
+.theme-toggle:hover {
+   background: var(--c-primary);
+}
+
+/* Toggle Circle */
+.theme-toggle__circle {
+   position: absolute;
+   top: 3px;
+   left: 3px;
+   width: 26px;
+   height: 26px;
+   background: #fff;
+   border-radius: 50%;
+   transition:
+      transform var(--dur-base) var(--ease-base),
+      background-color var(--dur-base) var(--ease-base);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark mode active */
+[data-theme='dark'] .theme-toggle__circle {
+   transform: translateX(32px);
+   background: #1e1e1e;
+}
+
+/* Icons */
+.theme-toggle__icon {
+   font-size: 14px;
+   transition: opacity var(--dur-fast) var(--ease-base);
+}
+
+.theme-toggle__icon--sun {
+   opacity: 1;
+}
+
+.theme-toggle__icon--moon {
+   opacity: 0;
+   position: absolute;
+}
+
+[data-theme='dark'] .theme-toggle__icon--sun {
+   opacity: 0;
+}
+
+[data-theme='dark'] .theme-toggle__icon--moon {
+   opacity: 1;
+}
+
+/* =========================
+      Hero Section
+      첫 인상 / 현재 상태 메시지
+      ========================= */
 
 .hero {
-   background-color: #ebebeb;
+   background-color: var(--c-surface);
+   transition: background-color var(--dur-base) var(--ease-base);
 }
 
-.profile {
-   background-color: #ffffff;
+/* =========================
+      Profile Section
+      ========================= */
+.profile__container {
+   padding: var(--sp-24);
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   min-height: 100vh;
 }
+
+.profile__content {
+   display: flex;
+   flex-direction: column;
+   gap: var(--sp-24);
+   width: 100%;
+   max-width: 1200px;
+}
+
+.profile__header__title {
+   display: flex;
+   justify-content: center;
+   font-size: var(--fz-24);
+   margin-bottom: var(--sp-24);
+   color: var(--c-text);
+   transition: color var(--dur-base) var(--ease-base);
+}
+
+/* =========================
+      Profile Card
+      ========================= */
+.profile__card {
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   gap: var(--sp-16);
+   background-color: var(--c-surface);
+   border-radius: 16px;
+   padding: var(--sp-24);
+   box-shadow: var(--shadow-sm);
+   transition:
+      background-color var(--dur-base) var(--ease-base),
+      box-shadow var(--dur-base) var(--ease-base);
+}
+
+/* =========================
+      Header
+      ========================= */
+.profile__header {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: var(--sp-12);
+   text-align: center;
+}
+
+.profile__name {
+   font-size: var(--fz-20);
+   font-weight: var(--fw-semibold);
+   color: var(--c-text);
+   transition: color var(--dur-base) var(--ease-base);
+}
+
+/* =========================
+      Avatar
+      ========================= */
+.profile__avatar {
+   width: 100%;
+   max-width: 220px;
+   border-radius: 12px;
+   overflow: hidden;
+   margin: 0 auto;
+   border: 2px solid var(--c-border);
+   transition: border-color var(--dur-base) var(--ease-base);
+}
+
+.profile__avatar img {
+   width: 100%;
+   height: auto;
+   border-radius: 12px;
+   object-fit: cover;
+}
+
+/* =========================
+      Description & Quotes
+      ========================= */
+.profile__des,
+.profile__quotes {
+   min-height: 60px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   position: relative;
+}
+
+.profile__des p,
+.profile__quotes blockquote {
+   font-size: var(--fz-14);
+   line-height: 1.6;
+   color: var(--c-text-sub);
+   text-align: center;
+   opacity: 0;
+   transition:
+      opacity 0.5s ease-in-out,
+      color var(--dur-base) var(--ease-base);
+   position: absolute;
+}
+
+.profile__des p.active,
+.profile__quotes blockquote.active {
+   opacity: 1;
+   position: relative;
+}
+
+.profile__quotes blockquote {
+   font-style: italic;
+   padding-left: 1em;
+   border-left: 3px solid var(--c-border);
+   transition: border-color var(--dur-base) var(--ease-base);
+}
+
+/* =========================
+      Body
+      ========================= */
+.profile__body {
+   display: flex;
+   flex-direction: column;
+   gap: var(--sp-12);
+}
+
+.profile__body p {
+   font-size: var(--fz-14);
+   color: var(--c-text);
+   text-align: center;
+   transition: color var(--dur-base) var(--ease-base);
+}
+
+/* =========================
+      Skills
+      ========================= */
+.profile__skills {
+   display: flex;
+   flex-wrap: wrap;
+   gap: var(--sp-8);
+   justify-content: center;
+}
+
+.profile__skills li {
+   padding: 0.4em 0.7em;
+   background-color: var(--c-bg);
+   border: 1px solid var(--c-border);
+   border-radius: 999px;
+   font-size: var(--fz-12);
+   color: var(--c-text);
+   transition:
+      background-color var(--dur-base) var(--ease-base),
+      border-color var(--dur-base) var(--ease-base),
+      color var(--dur-base) var(--ease-base);
+}
+
+.profile__skills li:hover {
+   background-color: var(--c-primary);
+   color: white;
+   border-color: var(--c-primary);
+}
+
+/* =========================
+      Resume Download Button
+      ========================= */
+.profile__resume {
+   margin-top: var(--sp-16);
+}
+
+.resume__btn {
+   width: 100%;
+   padding: 12px 24px;
+   background: linear-gradient(
+      135deg,
+      var(--c-primary) 0%,
+      var(--c-primary-hover) 100%
+   );
+   color: white;
+   border: none;
+   border-radius: 8px;
+   font-size: var(--fz-14);
+   font-weight: var(--fw-semibold);
+   cursor: pointer;
+   transition:
+      transform 0.2s,
+      box-shadow 0.2s;
+}
+
+.resume__btn:hover {
+   transform: translateY(-2px);
+   box-shadow: 0 4px 12px rgba(0, 98, 65, 0.4);
+}
+
+[data-theme='dark'] .resume__btn:hover {
+   box-shadow: 0 4px 12px rgba(29, 191, 115, 0.4);
+}
+
+.resume__btn:active {
+   transform: translateY(0);
+}
+
+/* =========================
+      My Info – Journey
+      ========================= */
+.my__info {
+   padding: var(--sp-24);
+   background-color: var(--c-surface);
+   border-radius: 16px;
+   box-shadow: var(--shadow-sm);
+   transition:
+      background-color var(--dur-base) var(--ease-base),
+      box-shadow var(--dur-base) var(--ease-base);
+}
+
+.about-journey {
+   display: flex;
+   flex-direction: column;
+   gap: var(--sp-32);
+   position: relative;
+}
+
+.journey-item {
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   gap: var(--sp-8);
+   opacity: 0;
+   transform: translateX(-20px);
+   transition:
+      opacity 0.6s ease,
+      transform 0.6s ease;
+}
+
+.journey-item.visible {
+   opacity: 1;
+   transform: translateX(0);
+}
+
+.journey-phase {
+   display: flex;
+   align-items: center;
+   gap: var(--sp-8);
+   font-size: var(--fz-12);
+   color: var(--c-text-sub);
+   transition: color var(--dur-base) var(--ease-base);
+}
+
+.dot {
+   width: 10px;
+   height: 10px;
+   border-radius: 50%;
+   flex-shrink: 0;
+}
+
+.dot.red {
+   background: #ff6b6b;
+}
+.dot.yellow {
+   background: #f4c430;
+}
+.dot.green {
+   background: #51cf66;
+}
+.dot.blue {
+   background: #339af0;
+}
+.dot.purple {
+   background: #845ef7;
+}
+
+.journey-item h4 {
+   font-size: var(--fz-16);
+   font-weight: var(--fw-semibold);
+   color: var(--c-text);
+   transition: color var(--dur-base) var(--ease-base);
+}
+
+.journey-item p {
+   font-size: var(--fz-14);
+   line-height: 1.7;
+   color: var(--c-text-sub);
+   transition: color var(--dur-base) var(--ease-base);
+}
+
+/* =========================
+      Skills Section
+      기술 스택 / 역량 시각화
+      ========================= */
 
 .skills {
-   background-color: #ebebeb;
+   background-color: var(--c-bg);
+   transition: background-color var(--dur-base) var(--ease-base);
 }
+
+/* =========================
+      Projects Section
+      작업물 / 데이터 기반 렌더링 영역
+      ========================= */
 
 .projects {
-   background-color: #ffffff;
+   background-color: var(--c-surface);
+   transition: background-color var(--dur-base) var(--ease-base);
 }
 
+/* =========================
+      Contact Section
+      연락처 / 소셜 링크
+      ========================= */
+
 .contact {
-   background-color: #ebebeb;
+   background-color: var(--c-bg);
+   transition: background-color var(--dur-base) var(--ease-base);
+}
+
+/* =========================
+      Footer
+      ========================= */
+
+.site__footer {
+   background-color: var(--c-surface);
+   border-top: 1px solid var(--c-border);
+   padding: var(--sp-32) 0;
+   transition:
+      background-color var(--dur-base) var(--ease-base),
+      border-color var(--dur-base) var(--ease-base);
+}
+
+/* =========================
+      Tablet: 768px+
+      ========================= */
+@media (min-width: 768px) {
+   .site__menu--list {
+      display: flex;
+   }
+
+   .profile__container {
+      padding: var(--sp-32);
+   }
+
+   .profile__content {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: var(--sp-24);
+   }
+
+   .profile__card {
+      height: fit-content;
+   }
+
+   .my__info {
+      padding: var(--sp-32);
+   }
+
+   .about-journey::before {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 0;
+      width: 2px;
+      height: 100%;
+      background-color: var(--c-border);
+      transition: background-color var(--dur-base) var(--ease-base);
+   }
+
+   .journey-item {
+      padding-left: 32px;
+   }
+
+   .journey-item h4 {
+      font-size: var(--fz-18);
+   }
+}
+
+/* =========================
+      Desktop: 1024px+
+      ========================= */
+@media (min-width: 1024px) {
+   .site__nav {
+      gap: var(--sp-48);
+   }
+
+   .profile__header__title {
+      font-size: 32px;
+      margin-bottom: var(--sp-32);
+   }
+
+   .profile__content {
+      grid-template-columns: 1fr 2fr;
+      gap: var(--sp-32);
+   }
+
+   .profile__card {
+      padding: var(--sp-32);
+   }
+
+   .profile__name {
+      font-size: var(--fz-24);
+   }
+
+   .profile__avatar {
+      max-width: 280px;
+   }
+
+   .journey-item {
+      padding-left: 40px;
+   }
+
+   .about-journey::before {
+      left: 8px;
+   }
 }
