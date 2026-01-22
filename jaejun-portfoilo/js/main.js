@@ -99,7 +99,7 @@ function ProfileCard(profile) {
                <p class="profile__name-en">${name.en}</p>
             </div>
             <div class="profile__avatar">
-               <img src="./assets/images/main/about/profile.jpeg"  alt="${image.alt}" />
+               <img src="../assets/images/main/about/profile.jpeg"  alt="${image.alt}" />
             </div>
             <div class="profile__des">
                ${description
