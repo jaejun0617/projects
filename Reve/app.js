@@ -9,6 +9,7 @@
 import { HomePage } from './src/pages/home/index.js';
 import { Header } from './src/components/Header.js';
 import { Footer } from './src/components/Footer.js';
+import { initSidebar } from './src/utils/sidebar.js';
 
 function mount(html) {
    const mountEl = document.querySelector('#app');
@@ -29,3 +30,4 @@ function layout(pageHtml) {
 }
 
 mount(layout(HomePage()));
+initSidebar();
