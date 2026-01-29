@@ -9,7 +9,9 @@
    right: 0;
    padding: 0rem 1rem;
    z-index: 9999;
-   border-bottom: 1px solid #c8c8c8;
+   background-color: rgba(255, 255, 255, 0.72);
+   backdrop-filter: blur(12px);
+   -webkit-backdrop-filter: blur(12px);
 }
 
 .site-nav {
