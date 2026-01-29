@@ -30,7 +30,7 @@
 ## 📚 Projects
 
 - [starbucks-renewal-winter](https://jaejun0617.github.io/frontend-learning/html-css/starbucks-renewal-winter/) (새 탭에서 열기)
-- [jaejun-portfolio — 진행중](https://jaejun0617.github.io/frontend-project/jaejun-portfoilo/) (새 탭에서 열기)
+- [jaejun-portfolio — 잠시 중단!](https://jaejun0617.github.io/frontend-project/jaejun-portfoilo/) (새 탭에서 열기)
 
 
 
